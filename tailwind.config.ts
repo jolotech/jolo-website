@@ -15,6 +15,11 @@ const config: Config = {
         blue: {
           100: "var(--blue)",
         },
+        jolo: {
+          orange: {
+            100: "var(--joloOrange)",
+          },
+        },
       },
     },
   },

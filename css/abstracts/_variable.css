@@ -2,6 +2,7 @@
 :root {
   --gray: #bdbdbd;
   --blue: #1985be;
+  --joloOrange: #d75f20;
 }
 
 [data-theme="light"] {

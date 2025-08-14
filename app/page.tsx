@@ -6,6 +6,7 @@ import { useState } from "react";
 import SearchInput from "@/components/SearchComponent";
 import UserDetail from "@/components/UserDetails";
 import useSearch from "@/hooks/useSearch";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 type User = {
@@ -63,53 +64,7 @@ export default function Home() {
   return (
     <main className={styles.wrapper}>
       <section className={styles.header}>
-        <h1 className="mt-8">Search for Users and Organization</h1>
-        <span className={styles.select_desc}>Please select your search type</span>
-
-        {/* ------ selection type ------ */}
-        <div className={styles.selection_wrapper}>
-          <div className="flex gap-4">
-            <input
-              type="radio"
-              checked={type === "user"}
-              id="user"
-              name="search-type"
-              onChange={() => {
-                setType("user");
-                setQuery("");
-                setValue("");
-              }}
-            />
-            <label htmlFor="user">User</label>
-          </div>
-          <div className="flex gap-4">
-            <input
-              type="radio"
-              checked={type === "org"}
-              id="organization"
-              name="search-type"
-              onChange={() => {
-                setType("org");
-                setQuery("");
-                setValue("");
-              }}
-            />
-            <label htmlFor="organization">Organization</label>
-          </div>
-        </div>
-
-        <SearchInput
-          searchDisabled={!type}
-          btnDisabled={!type || isFetching}
-          value={value}
-          setValue={setValue}
-          cb={() => setQuery(value)}
-        />
-      </section>
-
-      {/* ------ search result ------- */}
-      <section>
-        <div className={styles.search_response}>{searchStatus}</div>
+        <h1 className="mt-8">Welcome to Jolo</h1>
       </section>
     </main>
   );
