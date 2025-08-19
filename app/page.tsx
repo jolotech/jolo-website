@@ -8,6 +8,7 @@ import UserDetail from "@/components/UserDetails";
 import useSearch from "@/hooks/useSearch";
 import Link from "next/link";
 import styles from "./page.module.css";
+import MainLayout from "@/components/Layout/MainLayout";
 
 type User = {
   login: string;
@@ -62,10 +63,11 @@ export default function Home() {
   }
 
   return (
-    <main className={styles.wrapper}>
+    <MainLayout>
+      {/* className={styles.wrapper} */}
       <section className={styles.header}>
         <h1 className="mt-8">Welcome to Jolo</h1>
       </section>
-    </main>
+    </MainLayout>
   );
 }

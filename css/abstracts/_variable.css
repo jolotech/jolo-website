@@ -3,6 +3,9 @@
   --gray: #bdbdbd;
   --blue: #1985be;
   --joloOrange: #d75f20;
+
+  --text-color: #1a1a1a;
+  --background-color: #ffffff;
 }
 
 [data-theme="light"] {
