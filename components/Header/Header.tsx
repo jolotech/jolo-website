@@ -37,6 +37,7 @@ export default function Header() {
           <Badge href="/download">
             <FaGooglePlay className="w-5 h-5" />
             <FaApple className="w-5 h-5" />
+            <></>
           </Badge>
         </div>
       </div>
