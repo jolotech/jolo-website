@@ -1,17 +1,21 @@
 // ------------- import external dependencies ---------------
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Figtree } from "next/font/google";
 
 // --------------- import internal dependencies --------------
 import ReactQueryProvider from "@/utils/ReactQueryProvider";
 import "@/css/main.css";
 
 export const metadata: Metadata = {
-  title: "User Search Library",
-  description: "Library to search for users across github",
+  title: "Jolo Website",
+  description: "Jolojolo Website",
 };
 
-const poppins = Poppins({ weight: "400", preload: false });
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  preload: true,
+});
 
 export default function RootLayout({
   children,
@@ -20,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={figtree.className}>
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>

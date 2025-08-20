@@ -1,0 +1,5 @@
+.badge_wrapper {
+  @apply flex items-center gap-2;
+  @apply bg-white-100 rounded-md;
+  @apply w-[176px];
+}
