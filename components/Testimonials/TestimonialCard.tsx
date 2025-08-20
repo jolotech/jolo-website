@@ -6,11 +6,10 @@ type TestimonialCardProps = {
   quote: string;
   author: string;
   rating: number;
-  size?: "small" | "medium" | "large"; // control width/height variation
+  size?: "small" | "medium" | "large";
 };
 
 export default function TestimonialCard({ quote, author, rating, size = "medium" }: TestimonialCardProps) {
-  // Dynamic sizing classes
   const sizeClasses = {
     small: "col-span-1 row-span-1",
     medium: "col-span-1 md:col-span-2 row-span-1",
