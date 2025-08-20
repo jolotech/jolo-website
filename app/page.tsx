@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <main className={styles.wrapper}>
       <section className={styles.header}>
-        <h1 className="mt-8">Welcome to Jolo</h1>
+        <h1 className="mt-8 text-jolo-orange-100">Welcome to Jolo</h1>
       </section>
     </main>
   );
