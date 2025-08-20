@@ -10,7 +10,7 @@
     "format": "prettier --write",
     "prepare": "husky",
     "validate": "npx lint-staged",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch"
   },
   "dependencies": {
