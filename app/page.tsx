@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 // ------------- import internal dependencies -------------
-import SearchInput from "@/components/SearchComponent";
-import UserDetail from "@/components/UserDetails";
+// import SearchInput from "@/components/SearchComponent";
+// import UserDetail from "@/components/UserDetails";
 import useSearch from "@/hooks/useSearch";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -54,10 +54,10 @@ export default function Home() {
   if (isSuccess && data?.items.length > 0) {
     searchStatus = (
       <>
-        <h2 className="text-center text-3xl">Search Result </h2>
+        {/* <h2 className="text-center text-3xl">Search Result </h2>
         {data.items.map((user: User) => (
           <UserDetail name={user.login} type={user.type} img={user.avatar_url} key={user.id} />
-        ))}
+        ))} */}
       </>
     );
   }
