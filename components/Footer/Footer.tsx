@@ -2,37 +2,34 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Badge from "../Badge/Badge";
+import { Badge } from "../Badge/Badge";
 import { FaGooglePlay, FaApple, FaInstagram, FaLinkedin, FaFacebook, FaXTwitter } from "react-icons/fa6";
 import JoloLogo from "@/public/images/JoloLogo.svg";
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white mt-12">
-      {/* --- Top Call-to-Action --- */}
       <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between">
         <h2 className="text-3xl md:text-4xl font-bold leading-snug text-left">
           Ready to explore <br /> with Jolo
         </h2>
         <div className="mt-6 md:mt-0">
-          <Badge text="Get the app" href="/download">
+          <Badge href="#" bgColor="bg-white" textColor="text-black" text="Get the app">
             <FaGooglePlay className="w-5 h-5" />
             <FaApple className="w-5 h-5" />
           </Badge>
         </div>
       </div>
 
-      {/* --- Main Orange Footer --- */}
       <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl">
         <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* --- Brand Section --- */}
           <div>
             <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} className="mb-4" />
             <p className="text-sm leading-relaxed max-w-xs">
               Jolo is a logistics company that connects its users to their favorite food vendors, making sure they don’t
               have to wait on the common delays in our regular delivery companies.
             </p>
-            {/* Social Icons */}
+
             <div className="flex gap-4 mt-4 text-xl">
               <Link href="#">
                 <FaXTwitter />
@@ -49,7 +46,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* --- Solutions --- */}
           <div>
             <h4 className="font-semibold mb-4">Solutions</h4>
             <ul className="space-y-2 text-sm">
@@ -65,7 +61,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* --- Company --- */}
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
@@ -81,7 +76,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* --- Features --- */}
           <div>
             <h4 className="font-semibold mb-4">Features</h4>
             <ul className="space-y-2 text-sm">
@@ -98,7 +92,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* --- Bottom Footer --- */}
         <div className="border-t border-white/20 mt-8 py-4 px-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs">
           <p>© Jolo, 2025</p>
           <div className="flex gap-6 mt-3 md:mt-0">

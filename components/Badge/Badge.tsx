@@ -1,29 +1,28 @@
-"use client";
-
-import { FC, ReactNode } from "react";
-import Link from "next/link";
+import React from "react";
+import clsx from "clsx";
 
 interface AppBadgeProps {
+  href: string;
+  children: React.ReactNode;
+  bgColor?: string;
+  textColor?: string;
   text?: string;
-  href?: string;
-  children?: ReactNode;
 }
 
-const Badge: FC<AppBadgeProps> = ({ text = "Get the App", href = "#", children }) => {
+export const Badge: React.FC<AppBadgeProps> = ({
+  href,
+  children,
+  bgColor = "bg-black",
+  textColor = "text-white",
+  text = "Get the App",
+}) => {
   return (
-    <Link
+    <a
       href={href}
-      className="
-        inline-flex items-center gap-3 
-        rounded-full px-6 py-3 
-        bg-[var(--background-color,#fdfbf5)] text-black
-        shadow-sm hover:shadow-md transition
-      "
+      className={clsx("inline-flex items-center px-6 py-3 gap-3 rounded-full space-x-2", bgColor, textColor, text)}
     >
-      <span className="font-medium text-base">{text}</span>
-      <div className="flex items-center gap-2">{children}</div>
-    </Link>
+      <span className="font-medium">{text}</span>
+      {children}
+    </a>
   );
 };
-
-export default Badge;

@@ -6,7 +6,7 @@ type TestimonialCardProps = {
   quote: string;
   author: string;
   rating: number;
-  size?: "small" | "medium" | "large"; // control width/height variation
+  size?: "small" | "medium" | "large";
 };
 
 export default function TestimonialCard({ quote, author, rating, size = "medium" }: TestimonialCardProps) {
