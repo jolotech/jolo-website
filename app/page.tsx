@@ -9,7 +9,7 @@ import useSearch from "@/hooks/useSearch";
 import Link from "next/link";
 import styles from "./page.module.css";
 import MainLayout from "@/components/Layout/MainLayout";
-import LandingLayout from "@/components/Landinglayout/landingLayout";
+import LandingLayout from "@/components/Layout/landingLayout";
 
 type User = {
   login: string;
