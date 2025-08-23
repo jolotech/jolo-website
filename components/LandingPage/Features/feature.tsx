@@ -1,4 +1,4 @@
-import FeatureSection from "@/components/Features/featureSection";
+import FeatureSection from "@/components/LandingPage/Features/featureSection";
 import { ShoppingCart, ShoppingBag, Wallet, Truck, Utensils, ClipboardList } from "lucide-react";
 
 export default function Features() {

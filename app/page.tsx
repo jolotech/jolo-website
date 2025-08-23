@@ -9,6 +9,7 @@ import useSearch from "@/hooks/useSearch";
 import Link from "next/link";
 import styles from "./page.module.css";
 import MainLayout from "@/components/Layout/MainLayout";
+import LandingLayout from "@/components/Landinglayout/landingLayout";
 
 type User = {
   login: string;
@@ -63,11 +64,11 @@ export default function Home() {
   }
 
   return (
-    <MainLayout>
+    <LandingLayout>
       {/* className={styles.wrapper} */}
       <section className={styles.header}>
         <h1 className="mt-8 text-jolo-orange-100">Welcome to Jolo</h1>
       </section>
-    </MainLayout>
+    </LandingLayout>
   );
 }
