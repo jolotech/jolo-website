@@ -4,6 +4,7 @@ import JoloLogo from "@/public/images/JoloLogo.svg";
 import Image from "next/image";
 import { Badge } from "../Badge/Badge";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
+import ContactPage from "@/components/ContactPage/page";
 
 export default function Header() {
   return (
