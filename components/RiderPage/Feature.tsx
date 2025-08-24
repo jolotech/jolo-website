@@ -1,48 +1,44 @@
 import FeatureSection from "@/components/LandingPage/Features/featureSection";
-import { ShoppingCart, ShoppingBag, Wallet, Truck, Utensils, ClipboardList } from "lucide-react";
-import Frame from "@/public/images/Frame.svg";
+
 import Image from "next/image";
 
 export default function Features() {
   const features = [
     {
       id: "1",
-      icon: <Frame />,
-      title: "Personal Market Shopping",
-      description:
-        "No need to leave the house or stress about traffic. Just tell us what you need, we’ll shop for you like you would.",
+      icon: <Image src="/images/Frame.svg" alt="Personal Market Shopping" width={40} height={40} />,
+      title: "Flexible Scheduling",
+      description: "You choose when to ride, Full-time or Part-time, Jolo works around your schedule.",
     },
     {
       id: "2",
-      icon: <ShoppingBag />,
-      title: "Fresh, Handpicked Ingredients",
-      description:
-        "Our trained shoppers know how to choose the best vegetables, meat, and pantry items – fresh, clean, and just how you like them.",
+      icon: <Image src="/images/rider/Rider1.svg" alt="Personal Market Shopping" width={40} height={40} />,
+      title: "Weekly Payouts",
+      description: "Get paid every week directly into your bank account.",
     },
     {
       id: "3",
-      icon: <Wallet />,
-      title: "Real Market Prices",
-      description: "You’ll pay exactly what’s paid at the market. No surprises, no inflated costs.",
+      icon: <Image src="/images/rider/Rider2.svg" alt="Personal Market Shopping" width={40} height={40} />,
+      title: "In-App Navigation",
+      description: "Route optimization and live order tracking make deliveries faster and easier.",
     },
     {
       id: "4",
-      icon: <Truck />,
-      title: "Clean & Timely Delivery",
-      description: "Your items are carefully packed and delivered on time and in tact without spilling.",
+      icon: <Image src="/images/rider/Rider3.svg" alt="Personal Market Shopping" width={40} height={40} />,
+      title: "24/7 Support",
+      description: "We’ve got your back with live rider support when you need it.",
     },
     {
       id: "5",
-      icon: <Utensils />,
-      title: "Ready Meals Available",
-      description: "Order hot local meals from nearby restaurants when you need something ready-to-eat.",
+      icon: <Image src="/images/rider/Rider4.svg" alt="Personal Market Shopping" width={40} height={40} />,
+      title: "Performance Rewards",
+      description: "Earn more when you deliver more. Bonuses and incentives available.",
     },
     {
       id: "6",
-      icon: <ClipboardList />,
-      title: "Full Order Updates",
-      description:
-        "From the moment we start shopping to when it gets to your door, you can track your order every step of the way.",
+      icon: <Image src="/images/rider/Rider1.svg" alt="Personal Market Shopping" width={40} height={40} />,
+      title: "Rider Support",
+      description: " Need help? Our support team is available to guide you every step of the way.",
     },
   ];
 
