@@ -13,8 +13,8 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
       <Header />
       <main className="min-h-screen">{children}</main>
       <HeroSection />
-      <GettingStarted />
       <Features />
+      <GettingStarted />
       <TestimonialSection />
       <FAQ items={FaqItems} className="bg-gray-50" />
       <Footer />

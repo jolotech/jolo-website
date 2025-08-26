@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "../LandingPage/Badge/Badge";
 
 type Feature = {
   id: string;

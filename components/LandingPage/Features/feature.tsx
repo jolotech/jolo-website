@@ -1,11 +1,12 @@
 import FeatureSection from "@/components/LandingPage/Features/featureSection";
 import { ShoppingCart, ShoppingBag, Wallet, Truck, Utensils, ClipboardList } from "lucide-react";
+import Image from "next/image";
 
 export default function Features() {
   const features = [
     {
       id: "1",
-      icon: <ShoppingCart />,
+      icon: <Image src="/images/features/Features1.svg" alt="Features icon" />,
       title: "Personal Market Shopping",
       description:
         "No need to leave the house or stress about traffic. Just tell us what you need, we’ll shop for you like you would.",

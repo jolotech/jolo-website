@@ -18,17 +18,17 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 flex justify-center gap-8 text-white font-medium">
-          <Link href="/Partners" className="hover:text-blue-500">
+        <nav className="flex-1 flex justify-center gap-8 text-white font-medium text-[26px]">
+          <Link href="/Partners" className="hover:text-[#993D1F]">
             Partners
           </Link>
-          <Link href="/Company" className="hover:text-blue-500">
+          <Link href="/Company" className="hover:text-[#993D1F]">
             Company
           </Link>
-          <Link href="/Customers" className="hover:text-blue-500">
+          <Link href="/Customers" className="hover:text-[#993D1F]">
             Customers
           </Link>
-          <Link href="/contact" className="hover:text-blue-500">
+          <Link href="/contact" className="hover:text-[#993D1F]">
             Contact
           </Link>
         </nav>

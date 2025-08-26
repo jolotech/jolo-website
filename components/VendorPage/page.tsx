@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import RiderImg from "@/public/images/Rider.svg";
 import MainLayout from "../Layout/MainLayout";
 import FAQ from "../LandingPage/FAQ/faqItem";
 import { FaqItems } from "../LandingPage/FAQ/faq";
