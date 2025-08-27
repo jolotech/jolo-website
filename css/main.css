@@ -12,3 +12,8 @@
 /* ----------- import utilities folder ---------- */
 @import "tailwindcss/utilities";
 @import "./utils/helper.css";
+
+/* ----------- react mansory slider ---------- */
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";

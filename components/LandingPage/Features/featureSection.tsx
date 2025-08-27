@@ -23,7 +23,7 @@ export default function FeatureSection({
   subtitle = "The amazing features thoughtfully packed for our users.",
   features,
   className = "",
-  bgColor = "bg-[#fdf8f3]",
+  bgColor = "bg-[#FEFAEF]",
 }: FeatureSectionProps) {
   return (
     <section className={`relative ${bgColor} ${className}`}>
@@ -33,12 +33,7 @@ export default function FeatureSection({
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           viewBox="0 0 1200 120"
-        >
-          <path
-            d="M985.66 92.83C906.67 72 823.78 31 743.72 14.19 661.09-3.2 574.46-3.2 491.83 14.19 411.77 31 328.87 72 249.89 92.83c-66.49 17.64-133 22.29-199.88 12.57v16.6h1200v-16.6c-66.88 9.72-133.39 5.07-199.88-12.57z"
-            className="fill-orange-200"
-          />
-        </svg>
+        ></svg>
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6 py-20">
@@ -47,9 +42,9 @@ export default function FeatureSection({
           {subtitle && <p className="mt-2 text-base md:text-lg text-gray-600">{subtitle}</p>}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center ">
           {features.map((feature) => (
-            <Card key={feature.id} className="bg-white shadow-sm border rounded-xl hover:shadow-md transition">
+            <Card key={feature.id} className="bg-white  transition h-[360px] w-[360px]">
               <CardContent className="p-6 flex flex-col gap-3">
                 <div className="text-2xl">{feature.icon}</div>
                 <h3 className="font-semibold text-lg">{feature.title}</h3>

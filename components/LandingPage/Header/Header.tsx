@@ -4,7 +4,6 @@ import JoloLogo from "@/public/images/JoloLogo.svg";
 import Image from "next/image";
 import { Badge } from "../Badge/Badge";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
-import ContactPage from "@/components/ContactPage/page";
 
 export default function Header() {
   return (
@@ -18,7 +17,7 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 flex justify-center gap-8 text-white font-medium text-[26px]">
+        <nav className="flex-1 flex justify-center gap-8 text-white font-medium text-[16px]">
           <Link href="/Partners" className="hover:text-[#993D1F]">
             Partners
           </Link>
@@ -35,7 +34,13 @@ export default function Header() {
 
         {/* Play and App store  */}
         <div className="flex-shrink-0">
-          <Badge href="#" bgColor="bg-white" textColor="text-black" text="Get the app">
+          <Badge
+            href="#"
+            bgColor="bg-white"
+            textColor="text-black"
+            text="Get the app"
+            className="rounded-full px-4 bg-white h-12"
+          >
             <FaGooglePlay className="w-5 h-5" />
             <FaApple className="w-5 h-5" />
             <></>

@@ -11,7 +11,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
   return (
     <>
       <Header />
-      <main className="min-h-screen">{children}</main>
+      {/* <main className="min-h-screen">{children}</main> */}
       <HeroSection />
       <Features />
       <GettingStarted />

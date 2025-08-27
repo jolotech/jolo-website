@@ -2,9 +2,6 @@
 // ------------- import external dependencies ---------------
 import { useState } from "react";
 
-// ------------- import internal dependencies -------------
-// import SearchInput from "@/components/SearchComponent";
-// import UserDetail from "@/components/UserDetails";
 import useSearch from "@/hooks/useSearch";
 import Link from "next/link";
 import styles from "./page.module.css";

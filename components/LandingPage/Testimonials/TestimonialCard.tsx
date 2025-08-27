@@ -1,42 +1,30 @@
-"use client";
+import { FaQuoteLeft } from "react-icons/fa";
 
-import { FaQuoteLeft } from "react-icons/fa6";
-
-type TestimonialCardProps = {
+interface Props {
   quote: string;
   author: string;
   rating: number;
-  size?: "small" | "medium" | "large";
+  size: "small" | "medium";
+}
+
+const sizeClasses = {
+  small: "w-[320px] h-[220px]",
+  medium: "w-[380px] h-[240px]",
 };
 
-export default function TestimonialCard({ quote, author, rating, size = "medium" }: TestimonialCardProps) {
-  // Dynamic sizing classes
-  const sizeClasses = {
-    small: "col-span-1 row-span-1",
-    medium: "col-span-1 md:col-span-2 row-span-1",
-    large: "col-span-1 md:col-span-2 row-span-2",
-  };
-
+export default function TestimonialCard({ quote, author, rating, size }: Props) {
   return (
-    <div
-      className={`bg-[var(--joloOrangeLight,#F9C29E)] rounded-2xl p-6 flex flex-col justify-between shadow-sm ${sizeClasses[size]}`}
-    >
-      {/* Quote Icon + Text */}
+    <div className={`bg-[#F9C29E] rounded-xl p-6 shadow-md flex flex-col justify-between ${sizeClasses[size]}`}>
+      {/* Top Icon + Quote */}
       <div>
-        <FaQuoteLeft className="text-xl text-[var(--joloOrangeDark,#993D1F)] mb-3" />
+        <FaQuoteLeft className="text-brown-800 mb-3" />
         <p className="text-sm md:text-base leading-relaxed">{quote}</p>
       </div>
 
       {/* Author + Rating */}
       <div className="mt-4">
-        <p className="font-medium">{author}</p>
-        <div className="flex">
-          {Array.from({ length: rating }).map((_, i) => (
-            <span key={i} className="text-black text-sm">
-              ★
-            </span>
-          ))}
-        </div>
+        <div className="font-semibold">{author}</div>
+        <div className="text-black">{"★".repeat(rating)}</div>
       </div>
     </div>
   );

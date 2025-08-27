@@ -52,7 +52,13 @@ export default function GettingStarted() {
           </p>
 
           <div className="mt-6 flex gap-3">
-            <Badge href="#" bgColor="bg-black" textColor="text-white" text="Get the app">
+            <Badge
+              href="#"
+              bgColor="bg-black"
+              textColor="text-white"
+              text="Get the app"
+              className="rounded-full px-4 bg-black h-12"
+            >
               <FaGooglePlay className="w-5 h-5" />
               <FaApple className="w-5 h-5" />
             </Badge>

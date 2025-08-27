@@ -21,7 +21,7 @@ export const Badge: React.FC<AppBadgeProps> = ({
   return (
     <a
       href={href}
-      className={clsx("inline-flex items-center gap-3 space-x-2 font-medium", bgColor, textColor, className)}
+      className={clsx("inline-flex items-center gap-1 space-x-2 font-medium", bgColor, textColor, className)}
     >
       {text && <span>{text}</span>}
       {children}
