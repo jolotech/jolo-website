@@ -72,7 +72,7 @@ export default function HeroSection() {
         <Image
           src={HeroBackground}
           alt="hero background"
-          className="absolute inset-0 w-full h-full object-cover opacity-[35%] mix-blend-overlay"
+          className="absolute inset-0 w-full h-full object-cover opacity-[45%] mix-blend-overlay"
         />
 
         {/* Phone animation */}

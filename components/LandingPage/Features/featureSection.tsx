@@ -36,7 +36,7 @@ export default function FeatureSection({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center ">
           {features.map((feature) => (
             <Card key={feature.id} className="bg-white  transition h-[360px] w-auto">
-              <CardContent className="p-6 flex flex-col ">
+              <CardContent className="p-6 flex flex-col justify-center items-start h-full">
                 <div className="text-2xl">{feature.icon}</div>
                 <h3 className="font-semibold text-lg">{feature.title}</h3>
                 <p className="text-sm text-gray-600">{feature.description}</p>
