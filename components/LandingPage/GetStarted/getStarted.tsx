@@ -84,7 +84,7 @@ export default function GettingStarted() {
         </div>
 
         <div className="flex justify-center md:justify-end">
-          <div className="relative w-[280px] md:w-[360px] lg:w-[420px]">
+          <div className="relative w-full max-w-[420px] md:max-w-[360px] lg:max-w-[420px]">
             <Image src={GettingStartedImg} alt="Getting Started illustration" className="w-full h-auto" />
           </div>
         </div>
