@@ -27,15 +27,6 @@ export default function FeatureSection({
 }: FeatureSectionProps) {
   return (
     <section className={`relative ${bgColor} ${className}`}>
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
-        <svg
-          className="relative block w-[calc(200%+1.3px)] h-16"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 120"
-        ></svg>
-      </div>
-
       <div className="relative max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
@@ -44,8 +35,8 @@ export default function FeatureSection({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center ">
           {features.map((feature) => (
-            <Card key={feature.id} className="bg-white  transition h-[360px] w-[360px]">
-              <CardContent className="p-6 flex flex-col gap-3">
+            <Card key={feature.id} className="bg-white  transition h-[360px] w-auto">
+              <CardContent className="p-6 flex flex-col ">
                 <div className="text-2xl">{feature.icon}</div>
                 <h3 className="font-semibold text-lg">{feature.title}</h3>
                 <p className="text-sm text-gray-600">{feature.description}</p>
