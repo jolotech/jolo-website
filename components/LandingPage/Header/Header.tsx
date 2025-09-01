@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import JoloLogo from "@/public/images/JoloLogo.svg";
 import Image from "next/image";
@@ -8,48 +8,137 @@ import { Badge } from "../Badge/Badge";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import { Sling as Hamburger } from "hamburger-react";
 
+// shadcn Accordion
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
+  const [isOrange, setIsOrange] = useState(false);
+  const [openItem, setOpenItem] = useState<string | null>(null);
+
+  useEffect(() => {
+    const hero = document.querySelector("section");
+    if (hero) {
+      const bg = window.getComputedStyle(hero).backgroundColor;
+      if (bg.includes("249, 194, 158")) {
+        setIsOrange(true);
+      }
+    }
+  }, []);
+
+  const headerBg = isOrange ? "bg-[var(--joloOrange)]" : "bg-white";
+  const navText = isOrange ? "text-white" : "text-black";
+  const badgeBg = isOrange ? "bg-white" : "bg-[var(--joloOrange)]";
+  const badgeText = isOrange ? "text-black" : "text-white";
+  const hamburgerColor = isOrange ? "#fff" : "#000";
 
   return (
-    <header className="w-full bg-[var(--joloOrange)] shadow-md relative">
+    <header className={`w-full ${headerBg} shadow-md relative`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/">
-            <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} />
+            <Image src={JoloLogo} alt="Jolo Logo" width={75} height={40} className="bg-[var(--joloOrange)]" />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex flex-1 justify-center gap-8 text-white font-medium text-[16px]">
-          <Link href="/Partners" className="hover:text-[#993D1F]">
-            Partners
-          </Link>
-          <Link href="/Company" className="hover:text-[#993D1F]">
-            Company
-          </Link>
-          <Link href="/Customers" className="hover:text-[#993D1F]">
+        <nav className={`hidden md:flex flex-1 justify-center gap-8 font-medium text-[20px] ${navText}`}>
+          <Accordion
+            type="single"
+            collapsible
+            className="flex gap-8"
+            value={openItem || ""}
+            onValueChange={(value) => setOpenItem(value || null)}
+          >
+            {/* Partners Accordion */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenItem("partners no-underline")}
+              onMouseLeave={() => setOpenItem(null)}
+            >
+              <AccordionItem value="partners no-underline" className="relative">
+                <AccordionTrigger className="hover:text-[#993D1F] no-underline">Partners</AccordionTrigger>
+                <AccordionContent className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md p-4 flex flex-col gap-5 min-w-[150px] z-50 h-auto text-lg">
+                  <Link
+                    href="/rider"
+                    className="flex items-center gap-2 p-2 rounded-full transition-colors duration-200 hover:bg-[#FEFAEF] hover:text-[var(--joloOrange)] fill=none"
+                  >
+                    {/* Rider Icon */}
+                    <Image
+                      src="/images/hero/rider1.svg"
+                      alt="Rider"
+                      width={20}
+                      height={20}
+                      className="transition-colors duration-200 group-hover:filter group-hover:brightness-0 group-hover:invert"
+                    />
+                    <span>Riders</span>
+                  </Link>
+                  <Link
+                    href="/vendor"
+                    className="flex items-center gap-2 p-2 rounded-full transition-colors duration-200 hover:bg-[#FEFAEF] hover:text-[var(--joloOrange)] fill=none"
+                  >
+                    <Image
+                      src="/images/hero/vendor.svg"
+                      alt="Rider"
+                      width={20}
+                      height={20}
+                      className="transition-colors duration-200 group-hover:filter group-hover:brightness-0 group-hover:invert"
+                    />
+                    <span>Vendors</span>
+                  </Link>
+                </AccordionContent>
+              </AccordionItem>
+            </div>
+
+            {/* Company Accordion */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenItem("company no-underline")}
+              onMouseLeave={() => setOpenItem(null)}
+            >
+              <AccordionItem value="company no-underline" className="relative">
+                <AccordionTrigger className="hover:text-[#993D1F]">Company</AccordionTrigger>
+                <AccordionContent className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md p-4 flex flex-col gap-5 min-w-[150px] z-50 h-auto text-lg">
+                  <Link
+                    href="/about"
+                    className="flex items-center gap-2 p-2 rounded-full transition-colors duration-200 hover:bg-[#FEFAEF] hover:text-[var(--joloOrange)] fill=none"
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/career"
+                    className="flex items-center gap-2 p-2 rounded-full transition-colors duration-200 hover:bg-[#FEFAEF] hover:text-[var(--joloOrange)] fill=none"
+                  >
+                    Careers
+                  </Link>
+                </AccordionContent>
+              </AccordionItem>
+            </div>
+          </Accordion>
+
+          {/* Normal Links */}
+          <Link href="/Customers" className="hover:text-[#993D1F] text-center my-auto">
             Customers
           </Link>
-          <Link href="/contact" className="hover:text-[#993D1F]">
+          <Link href="/contact" className="hover:text-[#993D1F]  my-auto ">
             Contact
           </Link>
         </nav>
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <Hamburger toggled={isOpen} toggle={setOpen} color="#fff" />
+          <Hamburger toggled={isOpen} toggle={setOpen} color={hamburgerColor} />
         </div>
 
         {/* Play and App store */}
         <div className="hidden md:flex flex-shrink-0">
           <Badge
             href="#"
-            bgColor="bg-white"
-            textColor="text-black"
+            bgColor={badgeBg}
+            textColor={badgeText}
             text="Get the app"
-            className="rounded-full px-4 bg-white h-12"
+            className={`rounded-full px-4 h-12 ${badgeBg} ${badgeText}`}
           >
             <FaGooglePlay className="w-5 h-5" />
             <FaApple className="w-5 h-5" />
@@ -60,29 +149,45 @@ export default function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden z-50">
-          <ul className="flex flex-col items-center gap-4 py-6 text-black font-medium">
-            <li>
-              <Link href="/Partners" onClick={() => setOpen(false)} className="hover:text-[var(--joloOrange)]">
-                Partners
-              </Link>
-            </li>
-            <li>
-              <Link href="/Company" onClick={() => setOpen(false)} className="hover:text-[var(--joloOrange)]">
-                Company
-              </Link>
-            </li>
-            <li>
-              <Link href="/Customers" onClick={() => setOpen(false)} className="hover:text-[var(--joloOrange)]">
-                Customers
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[var(--joloOrange)]">
-                Contact
-              </Link>
-            </li>
+          <Accordion type="single" collapsible className="w-full">
+            {/* Partners Accordion */}
+            <AccordionItem value="partners">
+              <AccordionTrigger className="px-6">Partners</AccordionTrigger>
+              <AccordionContent className="flex flex-col pl-10 gap-2">
+                <Link href="/rider" onClick={() => setOpen(false)}>
+                  Riders
+                </Link>
+                <Link href="/vendors" onClick={() => setOpen(false)}>
+                  Vendors
+                </Link>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Company Accordion */}
+            <AccordionItem value="company">
+              <AccordionTrigger className="px-6">Company</AccordionTrigger>
+              <AccordionContent className="flex flex-col pl-10 gap-2">
+                <Link href="/about" onClick={() => setOpen(false)}>
+                  About Us
+                </Link>
+                <Link href="/career" onClick={() => setOpen(false)}>
+                  Careers
+                </Link>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Normal Links */}
+            <AccordionItem value="customers">
+              <AccordionTrigger className="px-6">Customers</AccordionTrigger>
+            </AccordionItem>
+            <AccordionItem value="contact">
+              <AccordionTrigger className="px-6">
+                <Link href="/contact">Contact</Link>
+              </AccordionTrigger>
+            </AccordionItem>
+
             {/* Mobile "Get the app" */}
-            <li>
+            <div className="px-6 py-4">
               <Badge
                 href="#"
                 bgColor="bg-[var(--joloOrange)]"
@@ -93,8 +198,8 @@ export default function Header() {
                 <FaGooglePlay className="w-5 h-5" />
                 <FaApple className="w-5 h-5" />
               </Badge>
-            </li>
-          </ul>
+            </div>
+          </Accordion>
         </div>
       )}
     </header>

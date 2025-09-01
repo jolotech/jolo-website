@@ -19,10 +19,10 @@ export default function HeroSection() {
 
   return (
     <section className="relative bg-[var(--joloOrange)] text-white overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 py-16 text-center">
+      <div style={{ marginTop: "100px" }} className="max-w-4xl mx-auto px-6 py-16 text-center">
         {/* Text animation */}
         <h1
-          className={`text-4xl md:text-5xl font-bold leading-tight transition-all duration-700 ease-out ${
+          className={`text-6xl md:text-5xl font-medium leading-tight transition-all duration-700 ease-out ${
             animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
           }`}
         >
@@ -30,7 +30,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className={`mt-6 text-base md:text-lg text-orange-100 transition-all duration-700 delay-200 ease-out ${
+          className={`font-helvetica-neue mt-10 text-base md:text-lg text-orange-100 transition-all duration-700 delay-200 ease-out ${
             animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
           }`}
         >
@@ -72,7 +72,7 @@ export default function HeroSection() {
         <Image
           src={HeroBackground}
           alt="hero background"
-          className="absolute inset-0 w-full h-full object-cover opacity-[45%] mix-blend-overlay"
+          className="absolute inset-0 w-full h-full object-cover opacity-[50%] mix-blend-overlay"
         />
 
         {/* Phone animation */}

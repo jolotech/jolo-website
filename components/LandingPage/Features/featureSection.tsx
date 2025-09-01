@@ -29,17 +29,17 @@ export default function FeatureSection({
     <section className={`relative ${bgColor} ${className}`}>
       <div className="relative max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
-          {subtitle && <p className="mt-2 text-base md:text-lg text-gray-600">{subtitle}</p>}
+          <h2 className="text-5xl md:text-4xl font-medium">{title}</h2>
+          {subtitle && <p className="mt-2 text-base md:text-lg text-gray-600 font-normal">{subtitle}</p>}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center " style={{ marginTop: "100px" }}>
           {features.map((feature) => (
             <Card key={feature.id} className="bg-white  transition h-[360px] w-auto">
               <CardContent className="p-6 flex flex-col justify-center items-start h-full">
                 <div className="text-2xl">{feature.icon}</div>
-                <h3 className="font-semibold text-lg">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.description}</p>
+                <h3 className="font-medium text-lg mt-7">{feature.title}</h3>
+                <p className="text-sm text-gray-600 mt-4">{feature.description}</p>
               </CardContent>
             </Card>
           ))}

@@ -45,7 +45,7 @@ export default function GettingStarted() {
     <section className="relative bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold leading-snug">Get started in these few steps</h2>
+          <h2 className="text-5xl md:text-4xl font-medium leading-snug">Get started in these few steps</h2>
           <p className="mt-4 text-gray-600 text-base md:text-lg">
             Jolo has come with the most seamless onboarding any customer has ever experienced. And you can get started
             with Jolo in these few steps.

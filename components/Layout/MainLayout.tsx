@@ -6,13 +6,13 @@ import { FaqItems } from "../LandingPage/FAQ/faq";
 import Features from "../LandingPage/Features/feature";
 import GettingStarted from "../LandingPage/GetStarted/getStarted";
 import HeroSection from "../LandingPage/Hero/hero";
+import Career from "@/app/career/page";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
       <main className="min-h-screen">{children}</main>
-
       <Footer />
     </>
   );
