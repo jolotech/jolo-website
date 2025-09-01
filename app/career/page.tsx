@@ -12,28 +12,30 @@ type IdentityCardProps = {
   image: string;
   title: string;
   description: string;
+  className?: string;
 };
 
 const IdentityCard = ({ image, title, description }: IdentityCardProps) => (
-  <div className="flex flex-col items-center text-center bg-white rounded-lg shadow-sm p-4">
-    <Image src={image} alt={title} width={100} height={100} className="w-24 h-24 object-contain" />
-    <h3 className="mt-4 font-semibold text-lg">{title}</h3>
-    <p className="mt-2 text-sm text-gray-600">{description}</p>
+  <div className="flex flex-col items-start text-left">
+    <Image src={image} alt={title} width={100} height={100} className="w-full h-auto object-contain" />
+    <h3 className="Instrument Sans mt-4 font-medium text-base">{title}</h3>
+    <p className="Instrument-Sans mt-2 text-sm text-black">{description}</p>
   </div>
 );
-
 type JobCardProps = {
   title: string;
   type: "On-site" | "Remote";
 };
 
 const JobCard = ({ title, type }: JobCardProps) => (
-  <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b py-4">
+  <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b py-4 px-6">
     <div>
       <h4 className="font-medium text-lg">{title}</h4>
-      <p className="text-sm text-gray-500">{type}</p>
+      <p className="text-sm text-black">{type}</p>
     </div>
-    <Button className="mt-3 md:mt-0 bg-[var(--joloOrange)] text-white rounded-md">Learn more</Button>
+    <Button className="mt-3 md:mt-0 bg-transparent text-black rounded-xl border-2 border-black px-4 py-2 hover:bg-[var(--joloOrange)]  ">
+      Learn more
+    </Button>
   </div>
 );
 
@@ -80,35 +82,38 @@ const Career = () => {
         </div>
 
         {/* Core Identities */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-semibold text-center">Our Core Identities</h2>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <IdentityCard
-              image="/images/career/value1.svg"
-              title="Purpose"
-              description="To make life easier for customers by providing dependable and timely delivery services."
-            />
-            <IdentityCard
-              image="/images/career/value2.svg"
-              title="Promise"
-              description="Jolo is always there for you, ensuring your needs are met quickly and with care."
-            />
-            <IdentityCard
-              image="/images/career/value3.svg"
-              title="Personality"
-              description="Friendly, compassionate, dependable, and proactive."
-            />
-            <IdentityCard
-              image="/images/career/value4.svg"
-              title="Values"
-              description="Trust, service excellence, reliability, and speed."
-            />
+        <div className="w-full ">
+          <div className="max-w-[1440px] mx-auto px-8 py-12">
+            <h2 className="text-3xl font-medium mb-8">Our Core Identities</h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+              <IdentityCard
+                image="/images/career/value1.svg"
+                title="Purpose"
+                description="To make life easier for customers by providing dependable and timely delivery services."
+              />
+              <IdentityCard
+                image="/images/career/value2.svg"
+                title="Promise"
+                description="Jolo is always there for you, ensuring your needs are met quickly and with care."
+              />
+              <IdentityCard
+                image="/images/career/value3.svg"
+                title="Personality"
+                description="Friendly, compassionate, dependable, and proactive."
+              />
+              <IdentityCard
+                image="/images/career/value4.svg"
+                title="Values"
+                description="Trust, service excellence, reliability, and speed."
+              />
+            </div>
           </div>
         </div>
 
         {/* Open Positions */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-semibold text-center">Our Open Positions</h2>
+        <div className="mt-16 w-auto bg-white py-12">
+          <h2 className="text-4xl font-medium text-center">Our Open Positions</h2>
           <div className="mt-8 space-y-4 max-w-3xl mx-auto">
             <JobCard title="Account Executive" type="On-site" />
             <JobCard title="Software Engineer" type="Remote" />
