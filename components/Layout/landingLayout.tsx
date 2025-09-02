@@ -1,6 +1,6 @@
 import Header from "../LandingPage/Header/Header";
 import Footer from "../LandingPage/Footer/Footer";
-import TestimonialSection from "../LandingPage/Testimonials/TestimonalSection";
+import TestimonialSection from "../../app/testimonial/TestimonalSection";
 import FAQ from "../LandingPage/FAQ/faqItem";
 import { FaqItems } from "../LandingPage/FAQ/faq";
 import Features from "../LandingPage/Features/feature";

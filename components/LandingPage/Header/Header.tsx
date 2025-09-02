@@ -157,7 +157,7 @@ export default function Header() {
                 <Link href="/rider" onClick={() => setOpen(false)}>
                   Riders
                 </Link>
-                <Link href="/vendors" onClick={() => setOpen(false)}>
+                <Link href="/vendor" onClick={() => setOpen(false)}>
                   Vendors
                 </Link>
               </AccordionContent>
