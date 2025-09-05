@@ -69,10 +69,19 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Horizontal Slider */}
-      <div className="overflow-x-scroll scrollbar-hide">
+      <div className="overflow-x-scroll scrollbar-hide ml-16">
         {/* left side respects layout, right side flushes */}
         <div className="flex justify-start">
-          <div className="grid grid-rows-2 grid-flow-col gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-4 min-w-max pl-6 pr-0">
+          <div
+            className="grid 
+            grid-flow-col 
+            auto-cols-max 
+            grid-rows-2
+            gap-x-4 md:gap-x-6
+            gap-y-1 md:gap-y-2
+            min-w-max 
+            pl-6 pr-0 "
+          >
             {testimonials.map((t, i) => (
               <TestimonialCard
                 key={i}

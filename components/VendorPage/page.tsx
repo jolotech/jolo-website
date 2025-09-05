@@ -19,8 +19,8 @@ export default function VendorPage() {
             </h2>
             <p className="mt-4 text-gray-600 text-lg">
               Join our vendor network and grow your business by reaching thousands of customers looking to shop smarter.
-              Whether you're a market woman, food vendor, pharmacy or store owner, Jolo helps you sell more without
-              changing how you work.
+              Whether you `&Apos;` re a market woman, food vendor, pharmacy or store owner, Jolo helps you sell more
+              without changing how you work.
             </p>
 
             {/* <button className="mt-6 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">

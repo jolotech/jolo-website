@@ -29,26 +29,37 @@ export default function AboutPage() {
             priority
           />
         </section>
-        {/* Who We Are Section */}
-        <section className="relative bg-[#F9C29E]">
-          <div className="relative max-w-6xl mx-auto px-6 py-20">
-            {/* Inner card with slightly darker shade */}
-            <div className="bg-gradient-to-br from-[#F9C29E] to-[#F7B785] text-black rounded-xl p-10 shadow grid md:grid-cols-2 gap-8 items-center">
-              <h2 className="text-2xl md:text-3xl font-semibold">Who We Are</h2>
-              <p className="text-sm md:text-base leading-relaxed">
+
+        <section className="relative bg-[#F9C29E] h-[400px] md:h-[500px] flex items-center justify-center">
+          <div className="relative bg-[#3232321A] max-w-6xl w-full mx-auto px-6 rounded-xl h-auto md:h-[300px] py-8 md:py-0">
+            {/* Inner card */}
+            <div className="relative text-black h-full p-10">
+              {/* Heading at top-left */}
+              <h2
+                className="text-2xl md:text-3xl font-semibold
+                   md:absolute md:top-10 md:left-10"
+              >
+                Who We Are
+              </h2>
+
+              {/* Article at bottom-right */}
+              <article
+                className="mt-6 md:mt-0 text-sm md:text-base leading-relaxed
+                   md:absolute md:bottom-10 md:right-10 md:max-w-md md:text-left"
+              >
                 Jolo is a smart grocery delivery service designed to bring market-fresh food items straight to your
                 doorstep without the stress of the market or restaurant. We exist to simplify the way people shop for
                 food, offering convenience, transparency, and reliable delivery across Nigeria.
-              </p>
+              </article>
             </div>
           </div>
         </section>
 
         {/* Philosophy Section */}
-        <section className="bg-black text-white">
-          <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-8 items-center">
-            <h2 className="text-2xl md:text-3xl font-semibold">Our Philosophy</h2>
-            <p className="text-sm md:text-base leading-relaxed text-gray-200">
+        <section className="bg-black text-white ">
+          <div className="max-w-6xl mx-auto px-6 py-20 text-left">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-16">Our Philosophy</h2>
+            <p className="text-sm md:text-base leading-relaxed text-gray-200 max-w-6xl">
               We believe that grocery shopping shouldn’t be a time-consuming, frustrating chore. So, we’ve built a
               system that lets you shop from trusted markets and food vendors from the comfort of your phone. Our goal
               is to make fresh food accessible, fairly priced, and easy to order anytime.
@@ -60,14 +71,14 @@ export default function AboutPage() {
         <section className="bg-[#FEFAEF]">
           <div className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4">Our Vision</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-16">Our Vision</h2>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                 To become the most trusted name in local grocery delivery, connecting communities to fresh food without
                 the market hassle.
               </p>
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4">Our Mission</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-16">Our Mission</h2>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                 To deliver quality food items at real market prices while saving our users the stress, time, and mess of
                 traditional shopping. We do the running around, so you can focus on what matters most.
