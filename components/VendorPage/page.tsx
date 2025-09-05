@@ -31,7 +31,7 @@ export default function VendorPage() {
           {/* Right Image */}
           <div className="flex justify-center">
             <div className="rounded-2xl overflow-hidden ">
-              <Image src={vendorImg} alt="Jolo Rider" className="object-cover w-full h-auto" />
+              <Image src={vendorImg} alt="Jolo Rider" className="object-cover w-full h-auto mb-20" />
             </div>
           </div>
         </div>

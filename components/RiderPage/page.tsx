@@ -29,7 +29,7 @@ export default function RiderPage() {
           </div>
 
           {/* Right Image */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-20 ">
             <div className="rounded-2xl overflow-hidden ">
               <Image src={RiderImg} alt="Jolo Rider" className="object-cover w-full h-auto" />
             </div>
