@@ -7,11 +7,11 @@ import Image from "next/image";
 import { Badge } from "../Badge/Badge";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import { Sling as Hamburger } from "hamburger-react";
-
+import SkipToContent from "@/components/base/SkipToContent";
 // shadcn Accordion
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-export default function Header() {
+export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const [isOpen, setOpen] = useState(false);
   const [isOrange, setIsOrange] = useState(false);
   const [openItem, setOpenItem] = useState<string | null>(null);
@@ -26,19 +26,20 @@ export default function Header() {
     }
   }, []);
 
-  const headerBg = isOrange ? "bg-[var(--joloOrange)]" : "bg-white";
-  const navText = isOrange ? "text-white" : "text-black";
-  const badgeBg = isOrange ? "bg-white" : "bg-[var(--joloOrange)]";
-  const badgeText = isOrange ? "text-black" : "text-white";
-  const hamburgerColor = isOrange ? "#fff" : "#000";
+  const headerBg = bgType === "orange" ? "bg-[var(--joloOrange)]" : "bg-white";
+  const navText = bgType === "orange" ? "text-white" : "text-black";
+  const badgeBg = bgType === "orange" ? "bg-white" : "bg-[var(--joloOrange)]";
+  const badgeText = bgType === "orange" ? "text-black" : "text-white";
+  const hamburgerColor = bgType === "orange" ? "#fff" : "#000";
 
   return (
     <header className={`w-full ${headerBg} shadow-md relative`}>
+      <SkipToContent />
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/">
-            <Image src={JoloLogo} alt="Jolo Logo" width={75} height={40} className="bg-[var(--joloOrange)]" />
+            <Image src={JoloLogo} alt="Jolo Logo" width={75} height={40} />
           </Link>
         </div>
 

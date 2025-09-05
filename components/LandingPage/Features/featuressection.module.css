@@ -1,0 +1,30 @@
+.wrapper {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center bg-white border border-jolo-grey-300 rounded-2xl;
+}
+
+.wrapper > div {
+  @apply transition h-[360px] w-auto rounded-none bg-none shadow-none;
+}
+
+.wrapper > div:nth-child(1),
+.wrapper > div:nth-child(4) {
+  @apply rounded-tl-2xl;
+}
+
+.wrapper > div:nth-child(3),
+.wrapper > div:nth-child(6) {
+  @apply rounded-tr-2xl;
+}
+
+.wrapper > div:nth-child(1),
+.wrapper > div:nth-child(2),
+.wrapper > div:nth-child(3) {
+  @apply border-b-[1px] border-jolo-grey-300;
+}
+
+.wrapper > div:nth-child(2),
+.wrapper > div:nth-child(3),
+.wrapper > div:nth-child(5),
+.wrapper > div:nth-child(6) {
+  @apply border-l-[1px] border-jolo-grey-300 border-solid;
+}

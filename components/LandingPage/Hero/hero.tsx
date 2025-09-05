@@ -21,23 +21,25 @@ export default function HeroSection() {
     <section className="relative bg-[var(--joloOrange)] text-white overflow-hidden">
       <div style={{ marginTop: "100px" }} className="max-w-4xl mx-auto px-6 py-16 text-center">
         {/* Text animation */}
-        <h1
-          className={`text-6xl md:text-5xl font-medium leading-tight transition-all duration-700 ease-out ${
-            animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-          }`}
-        >
-          Your Market Plug – Everything from Market to Meal to Delivery.
-        </h1>
+        <article>
+          <h1
+            className={`text-6xl md:text-5xl font-medium leading-tight transition-all duration-700 ease-out ${
+              animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+            }`}
+          >
+            Your Market Plug – Everything from Market to Meal to Delivery.
+          </h1>
 
-        <p
-          className={`font-helvetica-neue mt-10 text-base md:text-lg text-orange-100 transition-all duration-700 delay-200 ease-out ${
-            animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
-        >
-          We get it! Market runs can be hectic. That’s why Jolo makes it easy to shop everything you’d buy from your
-          favorite markets, straight from your phone. From fresh produce to household staples, we handle the haggling,
-          the queues, and the early morning hustle so you don’t have to.
-        </p>
+          <p
+            className={`font-helvetica-neue mt-10 text-base md:text-lg text-orange-100 transition-all duration-700 delay-200 ease-out ${
+              animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
+          >
+            We get it! Market runs can be hectic. That’s why Jolo makes it easy to shop everything you’d buy from your
+            favorite markets, straight from your phone. From fresh produce to household staples, we handle the haggling,
+            the queues, and the early morning hustle so you don’t have to.
+          </p>
+        </article>
 
         {/* Badges */}
         <div

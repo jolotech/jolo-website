@@ -7,17 +7,19 @@ import Features from "../LandingPage/Features/feature";
 import GettingStarted from "../LandingPage/GetStarted/getStarted";
 import HeroSection from "../LandingPage/Hero/hero";
 
-export default function LandingLayout({ children }: { children: React.ReactNode }) {
+export default function LandingLayout() {
   return (
     <>
-      <Header />
+      <Header bgType="orange" />
       {/* <main className="min-h-screen">{children}</main> */}
       <HeroSection />
-      <Features />
-      <GettingStarted />
-      <TestimonialSection />
-      <FAQ items={FaqItems} className="bg-gray-50" />
-      <Footer />
+      <main id="main-content">
+        <Features />
+        <GettingStarted />
+        <TestimonialSection />
+        <FAQ items={FaqItems} className="bg-gray-50" />
+        <Footer />
+      </main>
     </>
   );
 }

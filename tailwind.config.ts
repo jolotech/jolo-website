@@ -62,6 +62,9 @@ const config: Config = {
           orange: {
             100: "var(--joloOrange)",
           },
+          white: {
+            100: "var(--joloWhite)",
+          },
         },
       },
       borderRadius: {

@@ -49,6 +49,7 @@ export default function FAQ({
                     bg-white
                     data-[state=open]:bg-black data-[state=open]:text-white
                     transition-colors
+                    [&>svg]:hidden
                   "
                 >
                   <div className="flex w-full items-center justify-between gap-6 ">
