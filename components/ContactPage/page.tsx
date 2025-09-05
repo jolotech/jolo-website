@@ -10,6 +10,12 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import FAQ from "../LandingPage/FAQ/faqItem";
 import { FaqItems } from "../LandingPage/FAQ/faq";
+import Container from "@/components/container/Container";
+import XIcon from "@/public/images/contact/X.svg";
+import Image from "next/image";
+import InstagramIcon from "@/public/images/contact/Instagram.svg";
+import FaceBookIcon from "@/public/images/contact/Facebook.svg";
+import LinkedInIcon from "@/public/images/contact/linkedin.svg";
 type Social = {
   href: string;
   label: string;
@@ -17,10 +23,26 @@ type Social = {
 };
 
 const SOCIALS: Social[] = [
-  { href: "https://", label: "X (Twitter)", icon: <RiTwitterXFill className="h-5 w-5" /> },
-  { href: "https://", label: "Instagram", icon: <FaInstagram className="h-5 w-5" /> },
-  { href: "https://", label: "LinkedIn", icon: <FaLinkedinIn className="h-5 w-5" /> },
-  { href: "https://", label: "Facebook", icon: <FaFacebookF className="h-5 w-5" /> },
+  {
+    href: "https://x.com/Jolodelivery?t=p7fVZuMsKw46Pao8jMDP9Q&s=09",
+    label: "X (Twitter)",
+    icon: <Image src={XIcon} alt="x icon" className="h-[32px] w-[32px]" />,
+  },
+  {
+    href: "https://www.instagram.com/jolodelivery?utm_source=ig_web_button_share_sheet&igsh=MWJwZGwxNXk2NjR3Ng==",
+    label: "Instagram",
+    icon: <Image src={InstagramIcon} alt="instagram icon" className="h-[32px] w-[32px]" />,
+  },
+  {
+    href: "https://",
+    label: "LinkedIn",
+    icon: <Image src={LinkedInIcon} alt="LinkedIn icon" className="h-[32px] w-[32px]" />,
+  },
+  {
+    href: "https://www.facebook.com/share/16w6ZZ52VP/",
+    label: "Facebook",
+    icon: <Image src={FaceBookIcon} alt="Facebook icon" className="h-[32px] w-[32px]" />,
+  },
 ];
 
 export default function ContactPage() {
@@ -42,7 +64,7 @@ export default function ContactPage() {
                     aria-label={s.label}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white text-black transition hover:scale-105 hover:border-black"
+                    className="inline-flex h-[32px] w-[32px] items-center justify-center  text-black transition hover:scale-105 hover:border-black"
                   >
                     {s.icon}
                   </Link>

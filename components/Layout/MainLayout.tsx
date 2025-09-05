@@ -11,8 +11,8 @@ import Career from "@/app/career/page";
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Header />
-      <main className="min-h-screen">{children}</main>
+      <Header bgType="white" />
+      <main>{children}</main>
       <Footer />
     </>
   );

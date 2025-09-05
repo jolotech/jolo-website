@@ -33,7 +33,7 @@ export default function AboutPage() {
         <section className="relative bg-[#F9C29E]">
           <div className="relative max-w-6xl mx-auto px-6 py-20">
             {/* Inner card with slightly darker shade */}
-            <div className="bg-[#F6A770] text-black rounded-xl p-10 shadow grid md:grid-cols-2 gap-8 items-center">
+            <div className="bg-gradient-to-br from-[#F9C29E] to-[#F7B785] text-black rounded-xl p-10 shadow grid md:grid-cols-2 gap-8 items-center">
               <h2 className="text-2xl md:text-3xl font-semibold">Who We Are</h2>
               <p className="text-sm md:text-base leading-relaxed">
                 Jolo is a smart grocery delivery service designed to bring market-fresh food items straight to your
