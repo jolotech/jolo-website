@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
             grid-flow-col 
             auto-cols-max 
             grid-rows-2
-            gap-x-4 md:gap-x-6
+            gap-x-1 md:gap-x-6
             gap-y-1 md:gap-y-2
             min-w-max 
             pl-6 pr-0 "

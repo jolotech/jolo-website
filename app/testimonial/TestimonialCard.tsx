@@ -14,7 +14,6 @@ export default function TestimonialCard({ quote, author, rating, row }: Props) {
     <div className={`bg-[#F9C29E] rounded-xl p-6 shadow-md flex flex-col justify-between ${sizeClasses}`}>
       {/* Top Icon + Quote */}
       <div className="flex items-start gap-2">
-        {/* replace FaQuoteLeft with your custom icon */}
         <Image src="/images/QuoteIcon.svg" alt="quote" width={20} height={20} />
         <p className="text-sm md:text-base leading-relaxed">{quote}</p>
       </div>
