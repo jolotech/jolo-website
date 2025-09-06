@@ -70,7 +70,6 @@ export default function TestimonialsSection() {
 
       {/* Horizontal Slider */}
       <div className="overflow-x-scroll scrollbar-hide ml-16">
-        {/* left side respects layout, right side flushes */}
         <div className="flex justify-start">
           <div
             className="grid 

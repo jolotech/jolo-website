@@ -6,6 +6,7 @@ import MainLayout from "../Layout/MainLayout";
 import FAQ from "../LandingPage/FAQ/faqItem";
 import { FaqItems } from "../LandingPage/FAQ/faq";
 import GettingStarted from "../LandingPage/GetStarted/getStarted";
+import Link from "next/link";
 import Feature from "./Feature";
 
 export default function RiderPage() {
@@ -24,7 +25,13 @@ export default function RiderPage() {
             </p>
 
             <button className="mt-6 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">
-              Join the Fleet
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.jolo.rider_app.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join the Fleet
+              </Link>
             </button>
           </div>
 

@@ -23,8 +23,20 @@ export default function Footer() {
               text="Get the app"
               className="rounded-full px-4 bg-white h-[40px]"
             >
-              <FaGooglePlay className="w-5 h-5" />
-              <FaApple className="w-5 h-5" />
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+              </Link>
+              <Link
+                href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+              </Link>
             </Badge>
           </div>
         </div>{" "}
@@ -58,7 +70,12 @@ export default function Footer() {
                 >
                   <FaInstagram />
                 </Link>
-                <Link href="#">
+                <Link
+                  href="https://www.linkedin.com/company/jolo-delivery/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaLinkedin />
                 </Link>
                 <Link
@@ -77,13 +94,13 @@ export default function Footer() {
               <h4 className="font-medium mb-4">Solutions</h4>
               <ul className="space-y-2 text-sm text-jolo-white-100">
                 <li>
-                  <Link href="/#">Small Businesses</Link>
+                  <Link href="/career">Career</Link>
                 </li>
                 <li>
-                  <Link href="/#">Customers</Link>
+                  <Link href="/rider">Riders</Link>
                 </li>
                 <li>
-                  <Link href="/#">Partners</Link>
+                  <Link href="/vendor">Vendors</Link>
                 </li>
               </ul>
             </div>

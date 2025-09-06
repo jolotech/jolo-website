@@ -9,6 +9,7 @@ import HeroBackground from "@/public/images/HeroBG.svg";
 import PlayImg from "@/public/images/googleIcon.svg";
 import AppleImg from "@/public/images/AppleImg.svg";
 import Container from "@/components/container/Container";
+import Link from "next/link";
 
 export default function HeroSection() {
   const [animate, setAnimate] = useState(false);
@@ -51,23 +52,35 @@ export default function HeroSection() {
             }`}
           >
             <Badge href="#" text="" className="h-12 rounded-md px-4">
-              <div className="flex items-center">
-                <Image src={PlayImg} alt="Google Play" className="w-12 h-12 object-contain" />
-                <div className="flex flex-col leading-tight ml-2">
-                  <span className="text-xs text-left">GET IT ON</span>
-                  <span className="text-base font-semibold -mt-1">Google Play</span>
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center">
+                  <Image src={PlayImg} alt="Google Play" className="w-12 h-12 object-contain" />
+                  <div className="flex flex-col leading-tight ml-2">
+                    <span className="text-xs text-left">GET IT ON</span>
+                    <span className="text-base font-semibold -mt-1">Google Play</span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </Badge>
 
             <Badge href="#" text="" textColor="text-black" className="rounded-md px-4 bg-white">
-              <div className="flex items-center">
-                <Image src={AppleImg} alt="Apple Store" className="w-10 h-10 object-contain" />
-                <div className="flex flex-col leading-tight ml-2">
-                  <span className="text-xs text-left">Download on the</span>
-                  <span className="text-base font-semibold -mt-1">App Store</span>
+              <Link
+                href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center">
+                  <Image src={AppleImg} alt="Apple Store" className="w-10 h-10 object-contain" />
+                  <div className="flex flex-col leading-tight ml-2">
+                    <span className="text-xs text-left">Download on the</span>
+                    <span className="text-base font-semibold -mt-1">App Store</span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </Badge>
           </div>
         </div>

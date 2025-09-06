@@ -34,7 +34,7 @@ const SOCIALS: Social[] = [
     icon: <Image src={InstagramIcon} alt="instagram icon" className="h-[32px] w-[32px]" />,
   },
   {
-    href: "https://",
+    href: "https://www.linkedin.com/company/jolo-delivery/",
     label: "LinkedIn",
     icon: <Image src={LinkedInIcon} alt="LinkedIn icon" className="h-[32px] w-[32px]" />,
   },

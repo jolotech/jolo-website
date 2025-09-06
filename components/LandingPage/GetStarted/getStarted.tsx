@@ -5,6 +5,7 @@ import Image from "next/image";
 import GettingStartedImg from "@/public/images/Getting_started.svg";
 import { Badge } from "@/components/LandingPage/Badge/Badge";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
+import Link from "next/link";
 
 type Step = {
   id: number;
@@ -59,8 +60,20 @@ export default function GettingStarted() {
               text="Get the app"
               className="rounded-full px-4 bg-black h-12"
             >
-              <FaGooglePlay className="w-5 h-5" />
-              <FaApple className="w-5 h-5" />
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+              </Link>
+              <Link
+                href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+              </Link>
             </Badge>
           </div>
 

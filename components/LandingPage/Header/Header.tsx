@@ -145,8 +145,20 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
               text="Get the app"
               className={`rounded-full px-4 h-12 ${badgeBg} ${badgeText}`}
             >
-              <FaGooglePlay className="w-5 h-5" />
-              <FaApple className="w-5 h-5" />
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+              </Link>
+              <Link
+                href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+              </Link>
             </Badge>
           </div>
         </div>
@@ -201,8 +213,20 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
                 text="Get the app"
                 className="rounded-full px-4 h-12"
               >
-                <FaGooglePlay className="w-5 h-5" />
-                <FaApple className="w-5 h-5" />
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+                </Link>
+                <Link
+                  href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+                </Link>
               </Badge>
             </div>
           </Accordion>
