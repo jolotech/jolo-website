@@ -11,17 +11,17 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       <Container>
-        <div className="py-12 flex flex-row justify-between items-center gap-6">
+        <div className="py-12 flex flex-row justify-between items-center gap-6 max-md:flex-col max-md:justify-between max-md:items-center max-md:gap-0">
           <h2 className="text-3xl md:text-4xl font-bold leading-snug text-left Fredoka">
             Ready to explore <br /> with Jolo
           </h2>
-          <div className="mt-6 md:mt-0">
+          <div className="mt-6 md:mt-0 md:flex flex-shrink-0 h-auto">
             <Badge
               href="#"
               bgColor="bg-white"
               textColor="text-black"
               text="Get the app"
-              className="rounded-full px-4 bg-white h-12"
+              className="rounded-full px-4 bg-white h-[40px]"
             >
               <FaGooglePlay className="w-5 h-5" />
               <FaApple className="w-5 h-5" />
@@ -33,7 +33,8 @@ export default function Footer() {
       <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl ">
         <Container>
           <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div>
+            {/* Logo + About */}
+            <div className="order-2 md:order-1">
               <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} className="mb-4" />
               <p className="text-sm leading-relaxed max-w-xs">
                 Jolo is a logistics company that connects its users to their favorite food vendors, making sure they
@@ -41,22 +42,38 @@ export default function Footer() {
               </p>
 
               <div className="flex gap-4 mt-4 text-xl">
-                <Link href="#">
+                <Link
+                  href="https://x.com/Jolodelivery?t=p7fVZuMsKw46Pao8jMDP9Q&s=09"
+                  aria-label="X (Twitter)"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaXTwitter />
                 </Link>
-                <Link href="#">
+                <Link
+                  href="https://www.instagram.com/jolodelivery?utm_source=ig_web_button_share_sheet&igsh=MWJwZGwxNXk2NjR3Ng=="
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaInstagram />
                 </Link>
                 <Link href="#">
                   <FaLinkedin />
                 </Link>
-                <Link href="#">
+                <Link
+                  href="https://www.facebook.com/share/16w6ZZ52VP/"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaFacebook />
                 </Link>
               </div>
             </div>
 
-            <Container>
+            {/* Solutions */}
+            <div className="order-1 md:order-2">
               <h4 className="font-medium mb-4">Solutions</h4>
               <ul className="space-y-2 text-sm text-jolo-white-100">
                 <li>
@@ -69,16 +86,17 @@ export default function Footer() {
                   <Link href="/#">Partners</Link>
                 </li>
               </ul>
-            </Container>
+            </div>
 
-            <div>
+            {/* Company */}
+            <div className="order-1 md:order-3">
               <h4 className="font-medium mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/about">About</Link>
                 </li>
                 <li>
-                  <Link href="/careers">Careers</Link>
+                  <Link href="/career">Careers</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact</Link>
@@ -86,7 +104,8 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            {/* Features */}
+            <div className="order-1 md:order-4">
               <h4 className="font-medium mb-4">Features</h4>
               <ul className="space-y-2 text-sm">
                 <li>
