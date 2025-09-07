@@ -47,7 +47,10 @@ export default function RiderPage() {
         </div>
         <div>
           {" "}
-          <GettingStarted />{" "}
+          <GettingStarted
+            googlePlayUrl="https://play.google.com/store/apps/details?id=com.jolo.rider_app.app"
+            appStoreUrl="https://apps.apple.com/ng/app/jolo-rider/id6748385926"
+          />{" "}
         </div>
         <div>
           <FAQ items={FaqItems} className="bg-gray-50" />

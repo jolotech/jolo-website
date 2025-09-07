@@ -37,7 +37,12 @@ const steps: Step[] = [
   },
 ];
 
-export default function GettingStarted() {
+type GettingStartedProps = {
+  googlePlayUrl: string;
+  appStoreUrl: string;
+};
+
+export default function GettingStarted({ googlePlayUrl, appStoreUrl }: GettingStartedProps) {
   const [activeStep, setActiveStep] = useState(1);
 
   const currentStep = steps.find((s) => s.id === activeStep)!;
@@ -52,31 +57,27 @@ export default function GettingStarted() {
             with Jolo in these few steps.
           </p>
 
+          {/* Badge with icons */}
           <div className="mt-6 flex gap-3">
             <Badge
               href="#"
               bgColor="bg-black"
               textColor="text-white"
               text="Get the app"
-              className="rounded-full px-4 bg-black h-12"
+              className="rounded-full px-4 bg-black h-12 flex items-center gap-3"
             >
-              <Link
-                href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              {/* Google Play */}
+              <Link href={googlePlayUrl} target="_blank" rel="noopener noreferrer">
                 <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
               </Link>
-              <Link
-                href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              {/* App Store */}
+              <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer">
                 <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
               </Link>
             </Badge>
           </div>
 
+          {/* Steps */}
           <div className="mt-10 space-y-6">
             {steps.map((step) => (
               <div
@@ -96,6 +97,7 @@ export default function GettingStarted() {
           </div>
         </div>
 
+        {/* Image Section */}
         <div className="flex justify-center md:justify-end">
           <div className="relative w-full max-w-[420px] md:max-w-[360px] lg:max-w-[420px]">
             <Image src={GettingStartedImg} alt="Getting Started illustration" className="w-full h-auto" />

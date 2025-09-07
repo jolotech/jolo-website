@@ -40,7 +40,10 @@ export default function VendorPage() {
         </div>
         <div>
           {" "}
-          <GettingStarted />{" "}
+          <GettingStarted
+            googlePlayUrl="https://apps.apple.com/ng/app/jolo-vendor/id6748384649"
+            appStoreUrl="https://apps.apple.com/ng/app/jolo-vendor/id6748384649"
+          />{" "}
         </div>
         <div>
           <FAQ items={FaqItems} className="bg-gray-50" />

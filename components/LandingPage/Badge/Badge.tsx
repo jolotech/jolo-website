@@ -11,7 +11,6 @@ interface AppBadgeProps {
 }
 
 export const Badge: React.FC<AppBadgeProps> = ({
-  href,
   children,
   bgColor = "bg-black",
   textColor = "text-white",
@@ -19,12 +18,9 @@ export const Badge: React.FC<AppBadgeProps> = ({
   className,
 }) => {
   return (
-    <a
-      href={href}
-      className={clsx("inline-flex items-center gap-1 space-x-2 font-medium", bgColor, textColor, className)}
-    >
+    <div className={clsx("inline-flex items-center gap-1 space-x-2 font-medium", bgColor, textColor, className)}>
       {text && <span>{text}</span>}
       {children}
-    </a>
+    </div>
   );
 };
