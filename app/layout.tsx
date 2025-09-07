@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Jolo Website",
   description: "Jolojolo Website",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ico?v=2",
   },
 };
 
