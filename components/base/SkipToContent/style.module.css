@@ -1,0 +1,7 @@
+.skipLink {
+  @apply absolute -left-[999px] w-[1px] h-[1px] top-auto overflow-hidden z-[9999];
+}
+
+.skipLink:focus {
+  @apply fixed top-4 left-4 w-auto h-auto px-6 py-4 bg-white text-black border-2 border-black rounded-md no-underline outline-none;
+}

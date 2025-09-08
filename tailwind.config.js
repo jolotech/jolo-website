@@ -61,6 +61,12 @@ module.exports = {
           orange: {
             100: "var(--joloOrange)",
           },
+          white: {
+            100: "var(--joloWhite)",
+          },
+          grey: {
+            300: "var(--joloGrey300)",
+          },
         },
       },
       borderRadius: {
