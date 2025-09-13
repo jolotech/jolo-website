@@ -10,8 +10,25 @@ import { FaGooglePlay, FaApple } from "react-icons/fa";
 import { Sling as Hamburger } from "hamburger-react";
 import SkipToContent from "@/components/base/SkipToContent";
 import Container from "@/components/container/Container";
-// shadcn Accordion
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+function useDeviceType() {
+  const [device, setDevice] = useState<"android" | "ios" | "pc">("pc");
+
+  useEffect(() => {
+    const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
+
+    if (/android/i.test(ua)) {
+      setDevice("android");
+    } else if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
+      setDevice("ios");
+    } else {
+      setDevice("pc");
+    }
+  }, []);
+
+  return device;
+}
 
 export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const [isOpen, setOpen] = useState(false);
@@ -34,6 +51,18 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const badgeText = bgType === "orange" ? "text-black" : "text-white";
   const hamburgerColor = bgType === "orange" ? "#fff" : "#000";
   const LogoSrc = bgType === "orange" ? JoloLogoWhite : JoloLogoOrange;
+
+  const device = useDeviceType();
+
+  const getAppLink = () => {
+    if (device === "android") {
+      return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
+    } else if (device === "ios") {
+      return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
+    } else {
+      return "/download"; // fallback for PC/Mac
+    }
+  };
 
   return (
     <header className={`w-full ${headerBg} shadow-md relative`}>
@@ -136,30 +165,19 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
             <Hamburger toggled={isOpen} toggle={setOpen} color={hamburgerColor} />
           </div>
 
-          {/* Play and App store */}
           <div className="hidden md:flex flex-shrink-0">
-            <Badge
-              href="#"
-              bgColor={badgeBg}
-              textColor={badgeText}
-              text="Get the app"
-              className={`rounded-full px-4 h-12 ${badgeBg} ${badgeText}`}
-            >
-              <Link
-                href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
-                target="_blank"
-                rel="noopener noreferrer"
+            <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
+              <Badge
+                href="#"
+                bgColor={badgeBg}
+                textColor={badgeText}
+                text="Get the app"
+                className={`rounded-full px-4 h-12 flex items-center gap-2 ${badgeBg} ${badgeText}`}
               >
-                <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-              </Link>
-              <Link
-                href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-              </Link>
-            </Badge>
+                <FaGooglePlay className="w-5 h-5" />
+                <FaApple className="w-5 h-5" />
+              </Badge>
+            </Link>
           </div>
         </div>
       </Container>
@@ -207,7 +225,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
             </AccordionItem>
 
             {/* Mobile "Get the app" */}
-            <div className="px-6 py-4">
+            {/* <div className="px-6 py-4">
               <Badge
                 href="#"
                 bgColor="bg-[var(--joloOrange)]"
@@ -230,6 +248,20 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
                   <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
                 </Link>
               </Badge>
+            </div> */}
+            <div className="px-6 py-4">
+              <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
+                <Badge
+                  href="#"
+                  bgColor="bg-[var(--joloOrange)]"
+                  textColor="text-white"
+                  text="Get the app"
+                  className="rounded-full px-4 h-12 flex items-center gap-2"
+                >
+                  <FaGooglePlay className="w-5 h-5" />
+                  <FaApple className="w-5 h-5" />
+                </Badge>
+              </Link>
             </div>
           </Accordion>
         </div>
