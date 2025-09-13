@@ -196,7 +196,9 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
             {/* Normal Links */}
             <AccordionItem value="customers">
-              <AccordionTrigger className="px-6">Customers</AccordionTrigger>
+              <AccordionTrigger className="px-6">
+                <Link href="/Customers">Customers</Link>
+              </AccordionTrigger>
             </AccordionItem>
             <AccordionItem value="contact">
               <AccordionTrigger className="px-6">
