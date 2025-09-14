@@ -60,7 +60,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
     } else if (device === "ios") {
       return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
     } else {
-      return "/download"; // fallback for PC/Mac
+      return "/#"; // fallback for desktop
     }
   };
 
