@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Button */}
-      <div className="flex justify-center mt-12">
+      <div className="hidden md:flex justify-center mt-12">
         <a
           href="/testimonial"
           className="px-6 py-2 border border-black rounded-full text-sm hover:bg-black hover:text-white transition"
