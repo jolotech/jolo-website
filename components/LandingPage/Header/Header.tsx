@@ -11,24 +11,25 @@ import { Sling as Hamburger } from "hamburger-react";
 import SkipToContent from "@/components/base/SkipToContent";
 import Container from "@/components/container/Container";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useDeviceType } from "@/hooks/useDeviceType";
 
-function useDeviceType() {
-  const [device, setDevice] = useState<"android" | "ios" | "pc">("pc");
+// function useDeviceType() {
+//   const [device, setDevice] = useState<"android" | "ios" | "pc">("pc");
 
-  useEffect(() => {
-    const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
+//   useEffect(() => {
+//     const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
 
-    if (/android/i.test(ua)) {
-      setDevice("android");
-    } else if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
-      setDevice("ios");
-    } else {
-      setDevice("pc");
-    }
-  }, []);
+//     if (/android/i.test(ua)) {
+//       setDevice("android");
+//     } else if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
+//       setDevice("ios");
+//     } else {
+//       setDevice("pc");
+//     }
+//   }, []);
 
-  return device;
-}
+//   return device;
+// }
 
 export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const [isOpen, setOpen] = useState(false);
@@ -54,13 +55,23 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
   const device = useDeviceType();
 
-  const getAppLink = () => {
-    if (device === "android") {
+  // const getAppLink = () => {
+  //   if (device === "android") {
+  //     return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
+  //   } else if (device === "ios") {
+  //     return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
+  //   } else {
+  //     return "/#"; // fallback for desktop
+  //   }
+  // };
+
+  const getAppLink = (device: string) => {
+    if (device === "android" || device === "windows") {
       return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
-    } else if (device === "ios") {
+    } else if (device === "ios" || device === "mac") {
       return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
     } else {
-      return "/#"; // fallback for desktop
+      return "https://jolojolo.com";
     }
   };
 
@@ -166,7 +177,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
           </div>
 
           <div className="hidden md:flex flex-shrink-0">
-            <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
+            <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
               <Badge
                 href="#"
                 bgColor={badgeBg}
@@ -250,7 +261,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
               </Badge>
             </div> */}
             <div className="px-6 py-4">
-              <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
+              <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
                 <Badge
                   href="#"
                   bgColor="bg-[var(--joloOrange)]"
