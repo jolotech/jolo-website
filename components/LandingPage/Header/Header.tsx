@@ -13,24 +13,6 @@ import Container from "@/components/container/Container";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useDeviceType } from "@/hooks/useDeviceType";
 
-// function useDeviceType() {
-//   const [device, setDevice] = useState<"android" | "ios" | "pc">("pc");
-
-//   useEffect(() => {
-//     const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
-
-//     if (/android/i.test(ua)) {
-//       setDevice("android");
-//     } else if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
-//       setDevice("ios");
-//     } else {
-//       setDevice("pc");
-//     }
-//   }, []);
-
-//   return device;
-// }
-
 export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const [isOpen, setOpen] = useState(false);
   const [isOrange, setIsOrange] = useState(false);
@@ -54,17 +36,6 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const LogoSrc = bgType === "orange" ? JoloLogoWhite : JoloLogoOrange;
 
   const device = useDeviceType();
-
-  // const getAppLink = () => {
-  //   if (device === "android") {
-  //     return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
-  //   } else if (device === "ios") {
-  //     return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
-  //   } else {
-  //     return "/#"; // fallback for desktop
-  //   }
-  // };
-
   const getAppLink = (device: string) => {
     if (device === "android" || device === "windows") {
       return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
