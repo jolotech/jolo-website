@@ -42,7 +42,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
     } else if (device === "ios" || device === "mac") {
       return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
     } else {
-      return "https://jolojolo.com";
+      return "#";
     }
   };
 

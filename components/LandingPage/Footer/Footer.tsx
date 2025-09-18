@@ -6,8 +6,19 @@ import { Badge } from "../Badge/Badge";
 import { FaGooglePlay, FaApple, FaInstagram, FaLinkedin, FaFacebook, FaXTwitter } from "react-icons/fa6";
 import JoloLogo from "@/public/images/JoloLogo.svg";
 import Container from "@/components/container/Container";
+import { useDeviceType } from "@/hooks/useDeviceType";
 
 export default function Footer() {
+  const deviceType = useDeviceType();
+  const getAppLink = (device: string) => {
+    if (device === "android" || device === "windows") {
+      return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
+    } else if (device === "ios" || device === "mac") {
+      return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
+    } else {
+      return "#";
+    }
+  };
   return (
     <footer className="bg-black text-white">
       <Container>
