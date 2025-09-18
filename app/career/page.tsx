@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import MainLayout from "@/components/Layout/MainLayout";
 import Image from "next/image";
 import careerImg from "@/public/images/career.svg";
@@ -41,6 +41,12 @@ const JobCard = ({ title, type }: JobCardProps) => (
 );
 
 const Career = () => {
+  const jobsRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScrollToJobs = () => {
+    jobsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <MainLayout>
       <section className="bg-[#FEFAEF] pt-16 mb-16">
@@ -54,7 +60,10 @@ const Career = () => {
           {/* Heading + Button */}
           <div className="text-center mt-6 h-[180px]">
             <p className=" Instrument Sans text-6xl font-medium text-gray-900">Working with Jolojolo</p>
-            <Button className="mt-4 bg-[var(--joloOrange)] text-white px-6 py-2 rounded-[16px]">
+            <Button
+              onClick={handleScrollToJobs}
+              className="mt-4 bg-[var(--joloOrange)] text-white px-6 py-2 rounded-[16px] w-auto"
+            >
               Check Job Openings
             </Button>
           </div>
@@ -117,7 +126,7 @@ const Career = () => {
         </Container>
 
         {/* Open Positions */}
-        <div className="mt-16 bg-white pt-12">
+        <div ref={jobsRef} className="mt-16 bg-white pt-12">
           <h2 className="text-4xl font-medium text-center">Our Open Positions</h2>
           <Container>
             <section className=" mx-auto mt-8">
