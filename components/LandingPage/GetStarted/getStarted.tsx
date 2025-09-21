@@ -38,13 +38,19 @@ const steps: Step[] = [
   },
 ];
 
-type GettingStartedProps = {
-  googlePlayUrl: string;
-  appStoreUrl: string;
-};
-
-export default function GettingStarted({ googlePlayUrl, appStoreUrl }: GettingStartedProps) {
+export default function GettingStarted() {
   const [activeStep, setActiveStep] = useState(1);
+  const device = useDeviceType();
+
+  const getAppLink = (device: string) => {
+    if (device === "android" || device === "windows") {
+      return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
+    } else if (device === "ios" || device === "mac") {
+      return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
+    } else {
+      return "https://jolojolo.com";
+    }
+  };
 
   const currentStep = steps.find((s) => s.id === activeStep)!;
 
@@ -60,22 +66,24 @@ export default function GettingStarted({ googlePlayUrl, appStoreUrl }: GettingSt
 
           {/* Badge with icons */}
           <div className="mt-6 flex gap-3">
-            <Badge
-              href="#"
-              bgColor="bg-black"
-              textColor="text-white"
-              text="Get the app"
-              className="rounded-full px-4 bg-black h-12 flex items-center gap-3"
-            >
-              {/* Google Play */}
-              <Link href={googlePlayUrl} target="_blank" rel="noopener noreferrer">
-                <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-              </Link>
-              {/* App Store */}
-              <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-              </Link>
-            </Badge>
+            <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
+              <Badge
+                href="#"
+                bgColor="bg-black"
+                textColor="text-white"
+                text="Get the app"
+                className="rounded-full px-4 bg-black h-12 flex items-center gap-3"
+              >
+                {/* Google Play */}
+                <>
+                  <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+                </>
+                {/* App Store */}
+                <>
+                  <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
+                </>
+              </Badge>
+            </Link>
           </div>
 
           {/* Steps */}
