@@ -6,6 +6,7 @@ import GettingStartedImg from "@/public/images/Getting_started.svg";
 import { Badge } from "@/components/LandingPage/Badge/Badge";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import Link from "next/link";
+import { useDeviceType } from "@/hooks/useDeviceType";
 
 type Step = {
   id: number;
