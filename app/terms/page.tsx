@@ -8,7 +8,7 @@ import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 const Terms = () => {
   return (
     <MainLayout>
-      <article className="max-w-4xl mx-auto px-6 py-12">
+      <article className="max-w-6xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">Terms and Conditions of Use Policy</h1>
@@ -559,8 +559,6 @@ const Terms = () => {
             </li>
           </ul>
         </section>
-
-        {/* 🔜 Add Sections 4–9 following the same pattern */}
       </article>
     </MainLayout>
   );
