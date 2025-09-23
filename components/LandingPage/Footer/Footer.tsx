@@ -46,7 +46,7 @@ export default function Footer() {
         </div>{" "}
       </Container>
 
-      <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl ml-4 mr-4 ">
+      <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl ml-4 mr-4 mb-4">
         <Container>
           <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Logo + About */}
