@@ -15,10 +15,7 @@ export default function LandingLayout() {
       <HeroSection />
       <main id="main-content">
         <Features />
-        <GettingStarted
-          googlePlayUrl="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
-          appStoreUrl="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
-        />
+        <GettingStarted />
         <TestimonialSection />
         <FAQ items={FaqItems} className="bg-gray-50" />
         <Footer />
