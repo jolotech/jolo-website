@@ -200,41 +200,17 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
             {/* Normal Links */}
             <AccordionItem value="customers">
-              <AccordionTrigger className="px-6">
-                <Link href="/Customers">Customers</Link>
-              </AccordionTrigger>
+              <div className="flex px-6 h-[50px] items-center">
+                <Link href="/">Customers</Link>
+              </div>
             </AccordionItem>
             <AccordionItem value="contact">
-              <AccordionTrigger className="px-6">
+              <div className="flex px-6 h-[50px] items-center">
                 <Link href="/contact">Contact</Link>
-              </AccordionTrigger>
+              </div>
             </AccordionItem>
 
             {/* Mobile "Get the app" */}
-            {/* <div className="px-6 py-4">
-              <Badge
-                href="#"
-                bgColor="bg-[var(--joloOrange)]"
-                textColor="text-white"
-                text="Get the app"
-                className="rounded-full px-4 h-12"
-              >
-                <Link
-                  href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-                </Link>
-                <Link
-                  href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-                </Link>
-              </Badge>
-            </div> */}
             <div className="px-6 py-4">
               <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
                 <Badge
