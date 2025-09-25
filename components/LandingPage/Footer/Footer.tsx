@@ -98,7 +98,7 @@ export default function Footer() {
               <h4 className="font-medium mb-4">Solutions</h4>
               <ul className="space-y-2 text-sm text-jolo-white-100">
                 <li>
-                  <Link href="/career">Career</Link>
+                  <Link href="/career">Careers</Link>
                 </li>
                 <li>
                   <Link href="/rider">Riders</Link>
@@ -114,7 +114,7 @@ export default function Footer() {
               <h4 className="font-medium mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
                   <Link href="/career">Careers</Link>
@@ -130,7 +130,7 @@ export default function Footer() {
               <h4 className="font-medium mb-4">Features</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
                   <Link href="/career">Careers</Link>
