@@ -52,7 +52,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
     <header className={`w-full ${headerBg} shadow-md relative`}>
       <SkipToContent />
       <Container>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-0 py-4 flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -170,7 +170,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden z-50">
+        <div className="absolute top-full left-0 right-0 w-full bg-white shadow-lg md:hidden z-50">
           <Accordion type="single" collapsible className="w-full">
             {/* Partners Accordion */}
             <AccordionItem value="partners">
