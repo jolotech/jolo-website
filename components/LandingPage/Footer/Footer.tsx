@@ -6,8 +6,21 @@ import { Badge } from "../Badge/Badge";
 import { FaGooglePlay, FaApple, FaInstagram, FaLinkedin, FaFacebook, FaXTwitter } from "react-icons/fa6";
 import JoloLogo from "@/public/images/JoloLogo.svg";
 import Container from "@/components/container/Container";
+import { useDeviceType } from "@/hooks/useDeviceType";
 
 export default function Footer() {
+  const deviceType = useDeviceType();
+  const getAppLink = (device: string) => {
+    if (device === "android") {
+      return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
+    } else if (device === "ios") {
+      return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
+    } else if (device === "windows" || device === "mac" || device === "pc") {
+      return "https://shop.jolojolo.com";
+    } else {
+      return "https://shop.jolojolo.com";
+    }
+  };
   return (
     <footer className="bg-black text-white">
       <Container>
@@ -16,33 +29,24 @@ export default function Footer() {
             Ready to explore <br /> with Jolo
           </h2>
           <div className="mt-6 md:mt-0 md:flex flex-shrink-0 h-auto">
-            <Badge
-              href="#"
-              bgColor="bg-white"
-              textColor="text-black"
-              text="Get the app"
-              className="rounded-full px-4 bg-white h-[40px]"
-            >
-              <Link
-                href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
-                target="_blank"
-                rel="noopener noreferrer"
+            <Link href={getAppLink(deviceType)} target="_blank" rel="noopener noreferrer">
+              <Badge
+                href="#"
+                bgColor="bg-white"
+                textColor="text-black"
+                text="Get the app"
+                className="rounded-full px-4 bg-white h-[40px]"
               >
-                <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-              </Link>
-              <Link
-                href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-              </Link>
-            </Badge>
+                <FaGooglePlay className="w-5 h-5 cursor-pointer" />
+
+                <FaApple className="w-5 h-5 cursor-pointer" />
+              </Badge>
+            </Link>
           </div>
         </div>{" "}
       </Container>
 
-      <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl ">
+      <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl ml-4 mr-4 mb-4">
         <Container>
           <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Logo + About */}
@@ -94,7 +98,7 @@ export default function Footer() {
               <h4 className="font-medium mb-4">Solutions</h4>
               <ul className="space-y-2 text-sm text-jolo-white-100">
                 <li>
-                  <Link href="/career">Career</Link>
+                  <Link href="/career">Careers</Link>
                 </li>
                 <li>
                   <Link href="/rider">Riders</Link>
@@ -110,7 +114,7 @@ export default function Footer() {
               <h4 className="font-medium mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
                   <Link href="/career">Careers</Link>
@@ -126,7 +130,7 @@ export default function Footer() {
               <h4 className="font-medium mb-4">Features</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
                   <Link href="/career">Careers</Link>

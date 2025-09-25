@@ -8,8 +8,20 @@ import { FaqItems } from "../LandingPage/FAQ/faq";
 import GettingStarted from "../LandingPage/GetStarted/getStarted";
 import Link from "next/link";
 import Feature from "./Feature";
+import { useDeviceType } from "@/hooks/useDeviceType";
 
 export default function RiderPage() {
+  const deviceType = useDeviceType();
+
+  const getAppLink = (device: string) => {
+    if (device === "android" || device === "windows") {
+      return "https://play.google.com/store/apps/details?id=com.jolo.rider_app.app";
+    } else if (device === "ios" || device === "mac") {
+      return "https://apps.apple.com/ng/app/jolo-rider/id6748385926";
+    } else {
+      return "#";
+    }
+  };
   return (
     <MainLayout>
       <section className="bg-white py-16">
@@ -25,11 +37,7 @@ export default function RiderPage() {
             </p>
 
             <button className="mt-6 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">
-              <Link
-                href="https://play.google.com/store/apps/details?id=com.jolo.rider_app.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href={getAppLink(deviceType)} target="_blank" rel="noopener noreferrer">
                 Join the Fleet
               </Link>
             </button>
@@ -47,10 +55,7 @@ export default function RiderPage() {
         </div>
         <div>
           {" "}
-          <GettingStarted
-            googlePlayUrl="https://play.google.com/store/apps/details?id=com.jolo.rider_app.app"
-            appStoreUrl="https://apps.apple.com/ng/app/jolo-rider/id6748385926"
-          />{" "}
+          <GettingStarted />{" "}
         </div>
         <div>
           <FAQ items={FaqItems} className="bg-gray-50" />

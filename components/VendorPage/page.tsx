@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Badge } from "../LandingPage/Badge/Badge";
 import PlayImg from "@/public/images/googleIcon.svg";
 import AppleImg from "@/public/images/AppleImg.svg";
+import { useDeviceType } from "@/hooks/useDeviceType";
 
 export default function VendorPage() {
   return (
@@ -80,10 +81,7 @@ export default function VendorPage() {
         </div>
         <div>
           {" "}
-          <GettingStarted
-            googlePlayUrl="https://play.google.com/store/apps/details?id=com.jolo.vendor_app.app"
-            appStoreUrl="https://apps.apple.com/ng/app/jolo-vendor/id6748384649"
-          />{" "}
+          <GettingStarted />{" "}
         </div>
         <div>
           <FAQ items={FaqItems} className="bg-gray-50" />

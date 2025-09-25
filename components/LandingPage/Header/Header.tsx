@@ -37,12 +37,14 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
   const device = useDeviceType();
   const getAppLink = (device: string) => {
-    if (device === "android" || device === "windows") {
+    if (device === "android") {
       return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
-    } else if (device === "ios" || device === "mac") {
+    } else if (device === "ios") {
       return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
+    } else if (device === "windows" || device === "mac" || device === "pc") {
+      return "https://shop.jolojolo.com";
     } else {
-      return "https://jolojolo.com";
+      return "https://shop.jolojolo.com";
     }
   };
 
@@ -73,8 +75,10 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
                 onMouseEnter={() => setOpenItem("partners no-underline")}
                 onMouseLeave={() => setOpenItem(null)}
               >
-                <AccordionItem value="partners no-underline" className="relative">
-                  <AccordionTrigger className="hover:text-[#993D1F] no-underline">Partners</AccordionTrigger>
+                <AccordionItem value="partners no-underline" className="relative no-underline border-none">
+                  <AccordionTrigger className="hover:text-[#993D1F] no-underline border-none ">
+                    Partners
+                  </AccordionTrigger>
                   <AccordionContent className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md p-4 flex flex-col gap-5 min-w-[150px] z-50 h-auto text-base no-underline text-black">
                     <Link
                       href="/rider"
@@ -113,8 +117,8 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
                 onMouseEnter={() => setOpenItem("company no-underline")}
                 onMouseLeave={() => setOpenItem(null)}
               >
-                <AccordionItem value="company no-underline" className="relative">
-                  <AccordionTrigger className="hover:text-[#993D1F]">Company</AccordionTrigger>
+                <AccordionItem value="company no-underline" className="relative no-underline border-none">
+                  <AccordionTrigger className="hover:text-[#993D1F] no-underline border-none">Company</AccordionTrigger>
                   <AccordionContent className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md p-4 flex flex-col gap-5 min-w-[150px] z-50 h-auto text-black">
                     <Link
                       href="/about"
@@ -134,7 +138,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
             </Accordion>
 
             {/* Normal Links */}
-            <Link href="/Customers" className="hover:text-[#993D1F] text-center my-auto">
+            <Link href="/" className="hover:text-[#993D1F] text-center my-auto">
               Customers
             </Link>
             <Link href="/contact" className="hover:text-[#993D1F]  my-auto ">
@@ -196,41 +200,17 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
             {/* Normal Links */}
             <AccordionItem value="customers">
-              <AccordionTrigger className="px-6">
-                <Link href="/Customers">Customers</Link>
-              </AccordionTrigger>
+              <div className="flex px-6 h-[50px] items-center">
+                <Link href="/">Customers</Link>
+              </div>
             </AccordionItem>
             <AccordionItem value="contact">
-              <AccordionTrigger className="px-6">
+              <div className="flex px-6 h-[50px] items-center">
                 <Link href="/contact">Contact</Link>
-              </AccordionTrigger>
+              </div>
             </AccordionItem>
 
             {/* Mobile "Get the app" */}
-            {/* <div className="px-6 py-4">
-              <Badge
-                href="#"
-                bgColor="bg-[var(--joloOrange)]"
-                textColor="text-white"
-                text="Get the app"
-                className="rounded-full px-4 h-12"
-              >
-                <Link
-                  href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGooglePlay className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-                </Link>
-                <Link
-                  href="https://apps.apple.com/ng/app/jolo-delivery/id6748380014"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaApple className="w-5 h-5 cursor-pointer hover:text-[var(--joloOrange)] transition-colors" />
-                </Link>
-              </Badge>
-            </div> */}
             <div className="px-6 py-4">
               <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
                 <Badge
