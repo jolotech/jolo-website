@@ -138,7 +138,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
             </Accordion>
 
             {/* Normal Links */}
-            <Link href="/Customers" className="hover:text-[#993D1F] text-center my-auto">
+            <Link href="/" className="hover:text-[#993D1F] text-center my-auto">
               Customers
             </Link>
             <Link href="/contact" className="hover:text-[#993D1F]  my-auto ">
