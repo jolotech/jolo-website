@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">1. Scope of This Privacy Policy</h2>
           <p className="mb-4">This Policy applies to:</p>
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 list-inside space-y-2">
             <li>
               <strong>Customers/Users</strong> ordering food, groceries, or sending parcels.
             </li>
@@ -57,7 +57,7 @@ const PrivacyPolicy = () => {
             {/* Customers */}
             <div className="mb-4">
               <h4 className="font-semibold mb-4">1. For Customers/Users:</h4>
-              <ul className="list-disc pl-6 space-y-1">
+              <ul className="list-disc pl-6 list-inside space-y-1">
                 <li>
                   <strong>Identity Data:</strong> Full name, gender, date of birth (optional), email address, etc.
                 </li>
@@ -81,7 +81,7 @@ const PrivacyPolicy = () => {
             {/* 2 Vendors */}
             <div className="mb-4">
               <h4 className="font-semibold mb-4">2. For Vendors/Restaurants:</h4>
-              <ul className="list-disc pl-6 space-y-1">
+              <ul className="list-disc list-inside pl-6 space-y-1">
                 <li>
                   <strong>Business Identity Data:</strong> Registered business name, CAC certificate/incorporation
                   documents, TIN (Tax Identification Number).
@@ -103,7 +103,7 @@ const PrivacyPolicy = () => {
             {/* 3 for Riders/Delivary Partners */}
             <div className="mb-4">
               <h4 className="font-semibold mb-4">3.For Riders/Delivery Partners:</h4>
-              <ul className="list-disc pl-6 space-y-1">
+              <ul className="list-disc list-inside pl-6 space-y-1">
                 <li>
                   <strong>Identity Data:</strong> Full name, NIN (for verification).
                 </li>
@@ -133,14 +133,14 @@ const PrivacyPolicy = () => {
             </p>
             {/* Customers */}
             <div className="mb-4">
-              <ul className="list-disc pl-6 space-y-1">
+              <ul className="list-disc list-inside pl-6 space-y-1">
                 <li>
                   <strong>Device Information:</strong> IP address, device type, browser type, operating system, unique
                   device identifiers, app version.
                 </li>
                 <li>
                   <strong>Usage Information:</strong>
-                  <ul className="list-[circle] pl-6 space-y-1">
+                  <ul className="list-[circle]list-inside pl-6 space-y-1">
                     <li> Pages/screens visited within the app.</li>
                     <li>Search history (e.g., groceries searched, restaurants browsed).</li>
                     <li>Clickstream data (buttons tapped, navigation flow).</li>
@@ -150,11 +150,11 @@ const PrivacyPolicy = () => {
 
                 <li>
                   <strong>Location Information:</strong>
-                  <ul className="list-[circle] pl-6 space-y-1">
+                  <ul className="list-[circle] list-inside pl-6 space-y-1">
                     <li>
                       {" "}
                       Real-time GPS location (when enabled) to:
-                      <ul className="list-[square] pl-6 space-y-1">
+                      <ul className="list-[square] list-inside pl-6 space-y-1">
                         <li>Deliver accurate rider tracking.</li>
                         <li>Estimate delivery times.</li>
                         <li>Match you to nearby vendors/riders.</li>
@@ -180,7 +180,7 @@ const PrivacyPolicy = () => {
             <h3 className="text-xl font-medium mb-2">C. Information From Third Parties</h3>
             <p className="mb-2">We may receive additional personal data from trusted third-party sources, including:</p>
             <div>
-              <ul className="list-disc pl-6 space-y-1">
+              <ul className="list-disc list-inside pl-6 space-y-1">
                 <li>
                   <strong>Payment Partners & Banks:</strong> Confirmation of successful transactions, fraud alerts,
                   chargeback information.
@@ -197,7 +197,7 @@ const PrivacyPolicy = () => {
                 <li>
                   {" "}
                   <strong>Public/External Sources:</strong>
-                  <ul className="list-[circle] pl-6 space-y-1">
+                  <ul className="list-[circle] list-inside pl-6 space-y-1">
                     <li>Social media (if you interact with Jolo ads, campaigns, or accounts).</li>
                     <li>Public directories (to verify vendor registration or contact info).</li>
                   </ul>
@@ -359,14 +359,14 @@ const PrivacyPolicy = () => {
             <div className="my-6">
               <h4 className="font-semibold mb-4">A. For Customers/Users</h4>
               <p className="mb-2">We use your data to:</p>
-              <ul className="list-disc py-6 space-y-1">
+              <ul className="list-disc py-6 list-inside space-y-1">
                 <li>
                   <strong>Account Creation & Verification: </strong> Register your Jolo account, verify your identity
                   (including optional NIN/BVN where required by law), and secure login.
                 </li>
                 <li>
                   <strong>Order Processing & Delivery:</strong>
-                  <ul className="list-[circle] py-6 space-y-1">
+                  <ul className="list-[circle] list-inside py-6 space-y-1">
                     <li>Match your orders with relevant vendors and riders.</li>
                     <li>Confirm, prepare, and deliver your purchases to your chosen address.</li>
                     <li>Provide real-time tracking of your rider/delivery.</li>
@@ -374,35 +374,35 @@ const PrivacyPolicy = () => {
                 </li>
                 <li>
                   <strong>Payment Processing:</strong>
-                  <ul className="list-[circle] py-6 space-y-1">
+                  <ul className="list-[circle] list-inside py-6 space-y-1">
                     <li>Facilitate secure payments via cards, bank transfers, or wallet balance.</li>
                     <li>Process refunds, discounts, and promotional credits.</li>
                   </ul>
                 </li>
                 <li>
                   <strong>Customer Support:</strong>
-                  <ul className="list-[circle] py-6">
+                  <ul className="list-[circle] list-inside py-6">
                     <li>Resolve complaints and disputes.</li>
                     <li>Provide order status updates and respond to inquiries.</li>
                   </ul>
                 </li>
                 <li>
                   <strong>Personalization:</strong>
-                  <ul className="list-[circle]">
+                  <ul className="list-[circle] list-inside">
                     <li>Recommend vendors, groceries, or restaurants based on past orders.</li>
                     <li>Save delivery addresses and preferences for faster checkout.</li>
                   </ul>
                 </li>
                 <li>
                   <strong>Communication:</strong>
-                  <ul className="list-[circle]">
+                  <ul className="list-[circle] list-inside">
                     <li>Send service-related updates (order confirmations, delivery status, account alerts).</li>
                     <li>Share marketing offers, discounts, or promotions (only if you have opted-in).</li>
                   </ul>
                 </li>
                 <li>
                   <strong>Safety & Security:</strong>
-                  <ul className="list-[circle]">
+                  <ul className="list-[circle] list-inside">
                     <li>Detect fraudulent orders or suspicious account activity.</li>
                     <li>Protect against unauthorized transactions.</li>
                   </ul>
@@ -410,7 +410,7 @@ const PrivacyPolicy = () => {
 
                 <li>
                   <strong>Service Improvement:</strong>
-                  <ul className="list-[circle]">
+                  <ul className="list-[circle] list-inside">
                     <li>
                       Analyze purchase history, app usage, and feedback to improve recommendations, delivery times, and
                       platform performance.
@@ -425,7 +425,7 @@ const PrivacyPolicy = () => {
               <h4 className="font-semibold mb-4">B. For Vendors/Restaurants</h4>
               <p className="mb-2">We use your data to:</p>
               <div>
-                <ul className="list-disc py-6 space-y-1">
+                <ul className="list-disc py-6 list-inside space-y-1">
                   <li>
                     <strong>Onboarding & Verification: </strong>Confirm business registration, CAC documents, tax
                     details, and authorized representatives.
@@ -462,7 +462,7 @@ const PrivacyPolicy = () => {
               <h4 className="font-semibold mb-4">C. For Riders/Delivery Partners</h4>
               <p className="mb-2">We use your data to:</p>
               <div className="mb-2">
-                <ul className="list-disc py-6 space-y-1">
+                <ul className="list-disc list-inside py-6 space-y-1">
                   <li>
                     <strong>Onboarding & Verification:</strong> Validate your identity, driver’s license, vehicle
                     information, guarantor details, and background checks.
@@ -499,7 +499,7 @@ const PrivacyPolicy = () => {
               <h4 className="font-semibold mb-4">D. For All Users (Customers, Vendors, Riders)</h4>
               <p className="mb-2">We also use your data across the platform to:</p>
               <div className="mb-2">
-                <ul className="list-disc py-6 space-y-1">
+                <ul className="list-disc list-inside py-6 space-y-1">
                   <li>
                     <strong>Improve Platform Performance:</strong> Analyze app usage, crashes, and service bottlenecks
                     to optimize performance.
@@ -510,7 +510,7 @@ const PrivacyPolicy = () => {
                   </li>
                   <li>
                     <strong>Legal & Regulatory Compliance: </strong>
-                    <ul className="list-[circle] py-6">
+                    <ul className="list-[circle] list-inside py-6">
                       <li>Fulfill obligations under financial regulations (AML/KYC, tax laws).</li>
                       <li>Respond to legal requests or law enforcement inquiries.</li>
                     </ul>
@@ -536,7 +536,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-semibold mb-4">5. Cookies & Tracking Technologies</h2>
 
               <p className="mb-2">We use cookies and similar tools to:</p>
-              <ul className="list-disc py-6 space-y-1">
+              <ul className="list-disc py-6 list-inside space-y-1">
                 <li>Keep you logged in,</li>
                 <li>Personalize your browsing experience,</li>
                 <li> Track service usage for analytics and improvement.</li>
@@ -553,7 +553,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-semibold mb-4">6. How We Share Your Data</h2>
               <p className="mb-2">We do not sell your personal data. We may share your information as follows:</p>
               <div>
-                <ul className="list-disc py-6 space-y-1">
+                <ul className="list-disc list-inside py-6 space-y-1">
                   <li>
                     <strong>With Vendors/Restaurants: </strong> Limited details such as your name, order, and delivery
                     address to fulfill your request.
