@@ -688,8 +688,155 @@ const PrivacyPolicy = () => {
           <section>
             <div>
               <h2 className="text-2xl font-semibold mb-4">9. Data Retention</h2>
-              <p></p>
+              <p className="mb-2">We retain your data only for as long as necessary:</p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>To fulfill the purpose for which it was collected,</li>
+                <li>To comply with legal or regulatory obligations,</li>
+                <li>To resolve disputes or enforce contracts</li>
+              </ul>
+              <p className="mb-2">When retention is no longer required, we securely delete or anonymize your data.</p>
             </div>
+          </section>
+
+          {/* Section 10 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">10. Your Rights Under NDPA/NDPR</h2>
+            <p className="mb-2">
+              As a data subject under the <strong> Nigerian Data Protection Act (NDPA 2023) </strong>and the{" "}
+              <strong>NDPR</strong>, you have the following rights with respect to your personal data:
+            </p>
+            <ol className="list-decimal list-inside space-y-2">
+              <li>
+                <strong>Right of Access</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    You can request confirmation of whether we process your personal data and obtain a copy of the data
+                    we hold about you, together with details about the purpose of processing.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Right to Rectification</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    You can request correction of inaccurate or incomplete personal data to ensure the information we
+                    hold is accurate and up to date.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Right to Withdraw Consent</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    Where processing is based on your consent (e.g., marketing communications), you may withdraw that
+                    consent at any time. Withdrawal does not affect prior lawful processing.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>Right to Erasure (“Right to be Forgotten”)</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    You may request deletion of your personal data in certain circumstances, such as when it is no
+                    longer necessary for the purposes collected, or where you have withdrawn consent—except where
+                    retention is required by law (e.g., tax, AML, regulatory compliance).
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>Right to Restrict Processing</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    You may request we limit the processing of your data in specific situations, such as while verifying
+                    accuracy or handling an objection request.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>Right to Restrict Processing</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>You can object at any time to the processing of your personal data for direct marketing.</li>
+                  <li>
+                    You may also object to processing based on legitimate interests, unless we demonstrate compelling
+                    legitimate grounds that override your rights and freedoms.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>Right to Data Portability</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    You have the right to request a copy of your data in a structured, commonly used, and
+                    machine-readable format, and to transmit it to another controller where technically feasible.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>Right Not to Be Subject to Automated Decision-Making</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    You have the right not to be subject to decisions based solely on automated processing (including
+                    profiling) that produce legal or similarly significant effects, unless such processing is necessary
+                    for entering into or performing a contract, authorized by law, or based on your explicit consent.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>Right to Lodge a Complaint</strong>
+                <ul className="list-[circle] list-inside space-y-2">
+                  <li>
+                    If you believe your data rights have been violated, you may lodge a complaint with our{" "}
+                    <strong>Data Protection Officer (DPO)</strong> or escalate it to the{" "}
+                    <strong>Nigeria Data Protection Commission (NDPC).</strong>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h3 className="text-xl font-bold mb-6 mt-4">How to Exercise Your Rights</h3>
+            <p>
+              To exercise these rights, please contact us using the details provided in the <strong>Contact Us</strong>{" "}
+              section below. We may require you to verify your identity before fulfilling your request, in line with
+              legal requirements.
+            </p>
+          </section>
+
+          {/* Section 11 Updates to This Privacy Policy*/}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">11. Updates to This Privacy Policy</h2>
+            <p className="mb-2">
+              We may update this policy periodically. Updates will be posted on our website/app with a new “Last
+              Updated” date. For major changes, we will notify you directly.
+            </p>
+          </section>
+
+          {/* Section 12 Contact Us */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">12. Contact Us</h2>
+            <p className="mb-2">For inquiries or to exercise your data rights, please contact:</p>
+            <ul className="space-y-3">
+              <li>
+                <strong>Legal Officer</strong>{" "}
+              </li>
+              <li>
+                <a href="mailto:support@jolo.ng" className="underline hover:opacity-80">
+                  support@jolo.ng
+                </a>
+              </li>
+              <li>
+                <span>2, Oyedele Ogunniyi Street, Anthony Village, Lagos</span>
+              </li>
+              <li>
+                <a href="tel:+2349137578052" className="hover:opacity-80">
+                  +234-913-757-8052
+                </a>
+              </li>
+            </ul>
           </section>
         </section>
       </article>
