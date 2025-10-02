@@ -24,26 +24,32 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       <Container>
-        <div className="py-12 flex flex-row justify-between items-center gap-6 max-md:flex-col max-md:justify-between max-md:items-center max-md:gap-0">
-          <h2 className="text-3xl md:text-4xl font-bold leading-snug text-left Fredoka">
+        <div className="py-12 flex flex-row justify-between items-center gap-6 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-6">
+          {/* Heading */}
+          <h2
+            className="font-[Fredoka] text-[64px] font-medium leading-snug text-left 
+               max-md:text-[40px] max-md:font-medium max-md:text-center"
+          >
             Ready to explore <br /> with Jolo
           </h2>
-          <div className="mt-6 md:mt-0 md:flex flex-shrink-0 h-auto">
+
+          {/* Badge Section */}
+          <div className="mt-6 md:mt-0 flex justify-center md:justify-start flex-shrink-0 h-auto">
             <Link href={getAppLink(deviceType)} target="_blank" rel="noopener noreferrer">
               <Badge
                 href="#"
                 bgColor="bg-white"
                 textColor="text-black"
-                text="Get the app"
-                className="rounded-full px-4 bg-white h-[40px]"
+                text=""
+                className="rounded-full px-4 bg-white h-[64px] w-[209px] flex justify-center items-center"
               >
+                <span className="font-[Inter] font-semibold text-[20px] ">Get the app</span>
                 <FaGooglePlay className="w-5 h-5 cursor-pointer" />
-
-                <FaApple className="w-5 h-5 cursor-pointer" />
+                <FaApple className="w-5 h-5 cursor-pointer ml-2" />
               </Badge>
             </Link>
           </div>
-        </div>{" "}
+        </div>
       </Container>
 
       <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl ml-4 mr-4 mb-4">
@@ -52,7 +58,7 @@ export default function Footer() {
             {/* Logo + About */}
             <div className="order-2 md:order-1">
               <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} className="mb-4" />
-              <p className="text-sm leading-relaxed max-w-xs">
+              <p className="text-base leading-relaxed max-w-xs">
                 Jolo is a logistics company that connects its users to their favorite food vendors, making sure they
                 don’t have to wait on the common delays in our regular delivery companies.
               </p>
@@ -83,7 +89,7 @@ export default function Footer() {
                   <FaLinkedin />
                 </Link>
                 <Link
-                  href="https://www.facebook.com/share/16w6ZZ52VP/"
+                  href="https://web.facebook.com/profile.php?id=61577741350506#"
                   aria-label="Facebook"
                   target="_blank"
                   rel="noreferrer"
