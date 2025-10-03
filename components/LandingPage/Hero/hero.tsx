@@ -25,24 +25,23 @@ export default function HeroSection() {
       <Container>
         <div className="mt-16 sm:mt-8 md:mt-16 py-16 text-center">
           {/* Text animation */}
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto text-center">
             <article>
               <h1
-                className={`text-4xl md:text-5xl lg:text-6xl font-medium leading-tight transition-all duration-700 ease-out ${
+                className={`text-[48px] md:text-[56px] lg:text-[64px] font-bold leading-snug transition-all duration-700 ease-out ${
                   animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
                 }`}
               >
-                Your Market Plug – Everything from Market to Meal to Delivery.
+                Fresh Market Groceries, Delivered Fast
               </h1>
 
               <p
-                className={`font-helvetica-neue mt-6 md:mt-10 text-base md:text-lg text-orange-100 transition-all duration-700 delay-200 ease-out ${
+                className={`mt-6 md:mt-10 text-[18px] md:text-[20px] font-normal text-orange-100 transition-all duration-700 delay-200 max-w-5xl ease-out ${
                   animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
                 }`}
               >
-                We get it! Market runs can be hectic. That’s why Jolo makes it easy to shop everything you’d buy from
-                your favorite markets, straight from your phone. From fresh produce to household staples, we handle the
-                haggling, the queues, and the early morning hustle so you don’t have to.
+                Skip the market stress. Shop Mile 12 produce, pantry staples & more on Jolo, fresh, affordable, and at
+                your door in minutes.
               </p>
             </article>
           </div>
@@ -53,7 +52,7 @@ export default function HeroSection() {
               animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
             }`}
           >
-            <Badge href="#" text="" className="h-12 md:h-14 rounded-lg px-4">
+            <Badge href="#" text="" className="rounded-lg px-4 py-2">
               <Link
                 href="https://play.google.com/store/apps/details?id=com.jolojolo.user.app"
                 target="_blank"
@@ -62,7 +61,7 @@ export default function HeroSection() {
                 <div className="flex items-center">
                   <Image src={PlayImg} alt="Google Play" className="w-10 h-10 object-contain" />
                   <div className="flex flex-col leading-tight ml-2">
-                    <span className="text-xs text-left ">GET IT ON</span>
+                    <span className="text-[10px] text-left ">GET IT ON</span>
                     <span className="text-base font-semibold -mt-1">Google Play</span>
                   </div>
                 </div>

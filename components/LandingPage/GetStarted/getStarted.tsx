@@ -18,8 +18,7 @@ const steps: Step[] = [
   {
     id: 1,
     title: "Download Jolo App from your Appstore/Playstore",
-    description:
-      "Go to your Google Playstore on Android or Appstore on your iOS device to download the Jolo app. Appstore on your iOS device to download the Jolojolo app.",
+    description: "Go to your Google Playstore on Android or Appstore on your iOS device to download the Jolo app.",
   },
   {
     id: 2,
