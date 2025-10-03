@@ -16,7 +16,8 @@ export default function LandingLayout() {
       <main id="main-content">
         <Features />
         <GettingStarted />
-        <TestimonialSection />
+        {/* ----- TODO: Remove testimonial until we have real ones ----- */}
+        {/* <TestimonialSection /> */}
         <FAQ items={FaqItems} className="bg-gray-50" />
         <Footer />
       </main>

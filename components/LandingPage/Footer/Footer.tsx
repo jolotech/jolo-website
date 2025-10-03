@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="py-12 flex flex-row justify-between items-center gap-6 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-6">
           {/* Heading */}
           <h2
-            className="font-[Fredoka] text-[64px] font-medium leading-snug text-left 
+            className="font-[Fredoka] text-[64px] font-medium leading-snug text-left
                max-md:text-[40px] max-md:font-medium max-md:text-center"
           >
             Ready to explore <br /> with Jolo
@@ -52,13 +52,13 @@ export default function Footer() {
         </div>
       </Container>
 
-      <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl ml-4 mr-4 mb-4">
+      <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl mx-4">
         <Container>
-          <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div className="py-12 grid grid-cols-1 md:grid-cols-6 gap-10 md:gap-32">
             {/* Logo + About */}
-            <div className="order-2 md:order-1">
+            <div className="col-span-2 md:-order-none order-1">
               <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} className="mb-4" />
-              <p className="text-base leading-relaxed max-w-xs">
+              <p className="text-base leading-relaxed font-light text-sm">
                 Jolo is a logistics company that connects its users to their favorite food vendors, making sure they
                 don’t have to wait on the common delays in our regular delivery companies.
               </p>
@@ -99,62 +99,64 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Solutions */}
-            <div className="order-1 md:order-2">
-              <h4 className="font-medium mb-4">Solutions</h4>
-              <ul className="space-y-2 text-sm text-jolo-white-100">
-                <li>
-                  <Link href="/career">Careers</Link>
-                </li>
-                <li>
-                  <Link href="/rider">Riders</Link>
-                </li>
-                <li>
-                  <Link href="/vendor">Vendors</Link>
-                </li>
-              </ul>
-            </div>
+            <div className="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-24">
+              {/* Solutions */}
+              <div className="order-1 md:order-2">
+                <h4 className="font-medium mb-4">Solutions</h4>
+                <ul className="space-y-2 text-sm font-light text-jolo-white-100">
+                  <li>
+                    <Link href="/">Small Businesses</Link>
+                  </li>
+                  <li>
+                    <Link href="/rider">Customers</Link>
+                  </li>
+                  <li>
+                    <Link href="/vendor">Partners</Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Company */}
-            <div className="order-1 md:order-3">
-              <h4 className="font-medium mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link href="/career">Careers</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
-                </li>
-              </ul>
-            </div>
+              {/* Company */}
+              <div className="order-1 md:order-3">
+                <h4 className="font-medium mb-4">Company</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <Link href="/about">About Us</Link>
+                  </li>
+                  <li>
+                    <Link href="/career">Careers</Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">Contact</Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Features */}
-            <div className="order-1 md:order-4">
-              <h4 className="font-medium mb-4">Features</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link href="/career">Careers</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
-                </li>
-              </ul>
+              {/* Features */}
+              <div className="order-1 md:order-4">
+                <h4 className="font-medium mb-4">Features</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <Link href="/about">About Us</Link>
+                  </li>
+                  <li>
+                    <Link href="/career">Careers</Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">Contact</Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </Container>
 
-        <div className="border-t border-white/20 mt-8 py-4 px-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs">
-          <p>© Jolo, 2025</p>
+        <div className="border-t border-white/20 mt-8 py-4 px-6 max-w-7xl mx-auto md:flex flex-col md:flex-row justify-between items-center text-xs">
+          <p>&copy; Jolo, {new Date().getFullYear()}</p>
           <div className="flex gap-6 mt-3 md:mt-0 underline">
             <Link href="/terms">Terms & Conditions</Link>
             <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/cookies">Cookie Policy</Link>
+            {/* <Link href="/cookies">Cookie Policy</Link> */}
           </div>
         </div>
       </div>

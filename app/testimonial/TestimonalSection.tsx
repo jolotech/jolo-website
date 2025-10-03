@@ -1,6 +1,10 @@
 "use client";
 
 import TestimonialCard from "./TestimonialCard";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+
+const animation = { duration: 10000, easing: (t: number) => t };
 
 const testimonials = [
   {
@@ -62,6 +66,22 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    renderMode: "performance",
+    drag: false,
+    slides: { spacing: 15, perView: 2.5 },
+    created(s) {
+      s.moveToIdx(5, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+  });
+
   return (
     <section className="bg-[#FEFAEF] py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -69,26 +89,13 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Horizontal Slider */}
-      <div className="overflow-x-scroll scrollbar-hide ml-0 md:ml-16">
-        <div className="flex justify-start">
-          <div
-            className="grid 
-            grid-flow-col 
-            auto-cols-max 
-            grid-rows-2
-            gap-x-1 md:gap-x-6
-            gap-y-1 md:gap-y-2
-            min-w-max 
-            pl-6 pr-0 "
-          >
+      <div className="max-w-7xl mx-auto px-6">
+        <div>
+          <div ref={sliderRef} className="keen-slider">
             {testimonials.map((t, i) => (
-              <TestimonialCard
-                key={i}
-                quote={t.quote}
-                author={t.author}
-                rating={t.rating}
-                row={t.row as "top" | "bottom"}
-              />
+              <div className="keen-slider__slide" key={i}>
+                <TestimonialCard quote={t.quote} author={t.author} rating={t.rating} row={t.row as "top" | "bottom"} />
+              </div>
             ))}
           </div>
         </div>
