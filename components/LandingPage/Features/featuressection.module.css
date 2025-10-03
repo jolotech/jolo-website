@@ -16,15 +16,19 @@
   @apply rounded-tr-2xl;
 }
 
+.wrapper > div:not(:nth-child(6)) {
+  @apply border-b-[1px] sm:border-b-0 border-jolo-grey-300;
+}
+
 .wrapper > div:nth-child(1),
 .wrapper > div:nth-child(2),
 .wrapper > div:nth-child(3) {
-  @apply border-b-[1px] border-jolo-grey-300;
+  @apply sm:border-b-[1px] border-jolo-grey-300;
 }
 
 .wrapper > div:nth-child(2),
 .wrapper > div:nth-child(3),
 .wrapper > div:nth-child(5),
 .wrapper > div:nth-child(6) {
-  @apply border-l-[1px] border-jolo-grey-300 border-solid;
+  @apply sm:border-l-[1px] border-jolo-grey-300 border-solid;
 }
