@@ -12,11 +12,14 @@ import SkipToContent from "@/components/base/SkipToContent";
 import Container from "@/components/container/Container";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useDeviceType } from "@/hooks/useDeviceType";
+import { usePathname } from "next/navigation";
+import { useAppLink } from "@/hooks/getAppLink";
 
 export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const [isOpen, setOpen] = useState(false);
   const [isOrange, setIsOrange] = useState(false);
   const [openItem, setOpenItem] = useState<string | null>(null);
+  const getAppLink = useAppLink();
 
   useEffect(() => {
     const hero = document.querySelector("section");
@@ -36,17 +39,6 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const LogoSrc = bgType === "orange" ? JoloLogoWhite : JoloLogoOrange;
 
   const device = useDeviceType();
-  const getAppLink = (device: string) => {
-    if (device === "android") {
-      return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
-    } else if (device === "ios") {
-      return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
-    } else if (device === "windows" || device === "mac" || device === "pc") {
-      return "https://shop.jolojolo.com";
-    } else {
-      return "https://shop.jolojolo.com";
-    }
-  };
 
   return (
     <header className={`w-full ${headerBg} shadow-md relative`}>
@@ -152,7 +144,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
           </div>
 
           <div className="hidden md:flex flex-shrink-0">
-            <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
+            <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
               <Badge
                 href="#"
                 bgColor={badgeBg}
@@ -212,7 +204,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
             {/* Mobile "Get the app" */}
             <div className="px-6 py-4">
-              <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
+              <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
                 <Badge
                   href="#"
                   bgColor="bg-[var(--joloOrange)]"

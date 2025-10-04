@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import GettingStartedImg from "@/public/images/Getting_started.svg";
+import GettingStartedImg from "@/public/images/Getting_started.jpg";
 import { Badge } from "@/components/LandingPage/Badge/Badge";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import Link from "next/link";
