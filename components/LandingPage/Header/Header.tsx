@@ -44,7 +44,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
     <header className={`w-full ${headerBg} shadow-md relative`}>
       <SkipToContent />
       <Container>
-        <div className="max-w-7xl mx-auto md:px-0 py-4 md:py-0 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto py-4 flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">

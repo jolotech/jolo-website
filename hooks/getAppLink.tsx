@@ -18,7 +18,7 @@ export function useAppLink() {
       } else if (device === "ios") {
         return "https://apps.apple.com/ng/app/jolo-rider/id6748385926";
       } else {
-        return "https://shop.jolojolo.com";
+        return "https://shop.jolojolo.com/deliveryman-registration";
       }
     }
 
@@ -28,7 +28,7 @@ export function useAppLink() {
       } else if (device === "ios") {
         return "https://apps.apple.com/ng/app/jolo-vendor/id6748384000"; // example, replace when ready
       } else {
-        return "https://shop.jolojolo.com";
+        return "https://shop.jolojolo.com/store-registration?active=active";
       }
     }
 

@@ -7,7 +7,12 @@ import { FaGooglePlay, FaApple, FaInstagram, FaLinkedin, FaFacebook, FaXTwitter 
 import JoloLogo from "@/public/images/JoloLogo.svg";
 import Container from "@/components/container/Container";
 import { useDeviceType } from "@/hooks/useDeviceType";
+import { Fredoka } from "next/font/google";
 
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 export default function Footer() {
   const deviceType = useDeviceType();
   const getAppLink = (device: string) => {
@@ -27,8 +32,8 @@ export default function Footer() {
         <div className="py-12 flex flex-row justify-between items-center gap-6 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-6">
           {/* Heading */}
           <h2
-            className="font-[Fredoka] text-[64px] font-medium leading-snug text-left
-               max-md:text-[40px] max-md:font-medium max-md:text-center"
+            className={`${fredoka.className}text-[64px] font-medium leading-snug text-left
+               max-md:text-[40px] max-md:font-medium max-md:text-center`}
           >
             Ready to explore <br /> with Jolo
           </h2>
@@ -58,7 +63,7 @@ export default function Footer() {
             {/* Logo + About */}
             <div className="col-span-2 md:-order-none order-1">
               <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} className="mb-4" />
-              <p className="text-base leading-relaxed font-light text-sm">
+              <p className="text-base leading-relaxed font-light">
                 Jolo is a logistics company that connects its users to their favorite food vendors, making sure they
                 don’t have to wait on the common delays in our regular delivery companies.
               </p>
