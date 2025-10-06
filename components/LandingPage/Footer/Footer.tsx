@@ -89,7 +89,7 @@ export default function Footer() {
                   <FaLinkedin />
                 </Link>
                 <Link
-                  href="https://web.facebook.com/profile.php?id=61577741350506#"
+                  href="https://web.facebook.com/p/Jolo-Delivery-61577741350506/?_rdc=1&_rdr#"
                   aria-label="Facebook"
                   target="_blank"
                   rel="noreferrer"
