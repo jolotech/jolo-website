@@ -13,6 +13,7 @@ const fredoka = Fredoka({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
 export default function Footer() {
   const deviceType = useDeviceType();
   const getAppLink = (device: string) => {
@@ -32,7 +33,7 @@ export default function Footer() {
         <div className="py-12 flex flex-row justify-between items-center gap-6 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-6">
           {/* Heading */}
           <h2
-            className={`${fredoka.className}text-[64px] font-medium leading-snug text-left
+            className={`${fredoka.className} text-[64px] font-medium leading-snug text-left
                max-md:text-[40px] max-md:font-medium max-md:text-center`}
           >
             Ready to explore <br /> with Jolo

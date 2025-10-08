@@ -53,7 +53,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className={`hidden md:flex flex-1 justify-center gap-8 font-medium text-[20px] ${navText}`}>
+          <nav className={`hidden lg:flex flex-1 justify-center gap-8 font-medium text-[20px] ${navText}`}>
             <Accordion
               type="single"
               collapsible
@@ -139,11 +139,11 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
           </nav>
 
           {/* Mobile Hamburger */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Hamburger toggled={isOpen} toggle={setOpen} color={hamburgerColor} />
           </div>
 
-          <div className="hidden md:flex flex-shrink-0">
+          <div className="hidden lg:flex flex-shrink-0">
             <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
               <Badge
                 href="#"
@@ -162,7 +162,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 w-full bg-white shadow-lg md:hidden z-50">
+        <div className="absolute top-full left-0 right-0 w-full bg-white shadow-lg lg:hidden z-50">
           <Accordion type="single" collapsible className="w-full">
             {/* Partners Accordion */}
             <AccordionItem value="partners">
