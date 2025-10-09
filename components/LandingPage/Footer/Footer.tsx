@@ -49,7 +49,7 @@ export default function Footer() {
                 text=""
                 className="rounded-full px-4 bg-white h-[64px] w-[209px] flex justify-center items-center"
               >
-                <span className="font-[Inter] font-semibold text-[20px] ">Get the app</span>
+                <span className="font-semibold text-[20px] ">Get the app</span>
                 <FaGooglePlay className="w-5 h-5 cursor-pointer" />
                 <FaApple className="w-5 h-5 cursor-pointer ml-2" />
               </Badge>
