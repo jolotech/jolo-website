@@ -6,8 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { RiTwitterXFill } from "react-icons/ri";
-import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import useContactForm from "@/hooks/useContactForm";
 import FAQ from "../LandingPage/FAQ/faqItem";
 import { FaqItems } from "../LandingPage/FAQ/faq";
 import Container from "@/components/container/Container";
@@ -46,6 +45,24 @@ const SOCIALS: Social[] = [
 ];
 
 export default function ContactPage() {
+  const { submitContactForm, loading, error, success } = useContactForm();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const firstName = (form.firstName as any).value;
+    const lastName = (form.lastName as any).value;
+    const email = (form.email as any).value;
+    const help = (form.message as any).value;
+
+    try {
+      await submitContactForm({ firstName, lastName, email, help });
+      alert("Message sent successfully!");
+      form.reset();
+    } catch (err) {
+      alert("Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <MainLayout>
       <section className="bg-[var(--site-bg,#FBF6EA)]">
@@ -93,10 +110,7 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:pl-4">
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="rounded-2xl bg-black p-6 text-white shadow-xl md:p-8"
-              >
+              <form onSubmit={handleSubmit} className="rounded-2xl bg-black p-6 text-white shadow-xl md:p-8">
                 <h2 className="text-xl font-semibold">Send us a message</h2>
 
                 <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
