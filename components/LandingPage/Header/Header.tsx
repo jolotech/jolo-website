@@ -12,11 +12,14 @@ import SkipToContent from "@/components/base/SkipToContent";
 import Container from "@/components/container/Container";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useDeviceType } from "@/hooks/useDeviceType";
+import { usePathname } from "next/navigation";
+import { useAppLink } from "@/hooks/getAppLink";
 
 export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const [isOpen, setOpen] = useState(false);
   const [isOrange, setIsOrange] = useState(false);
   const [openItem, setOpenItem] = useState<string | null>(null);
+  const getAppLink = useAppLink();
 
   useEffect(() => {
     const hero = document.querySelector("section");
@@ -36,23 +39,12 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
   const LogoSrc = bgType === "orange" ? JoloLogoWhite : JoloLogoOrange;
 
   const device = useDeviceType();
-  const getAppLink = (device: string) => {
-    if (device === "android") {
-      return "https://play.google.com/store/apps/details?id=com.jolojolo.user.app";
-    } else if (device === "ios") {
-      return "https://apps.apple.com/ng/app/jolo-delivery/id6748380014";
-    } else if (device === "windows" || device === "mac" || device === "pc") {
-      return "https://shop.jolojolo.com";
-    } else {
-      return "https://shop.jolojolo.com";
-    }
-  };
 
   return (
     <header className={`w-full ${headerBg} shadow-md relative`}>
       <SkipToContent />
       <Container>
-        <div className="max-w-7xl mx-auto px-6 md:px-0 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto py-4 flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -61,7 +53,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className={`hidden md:flex flex-1 justify-center gap-8 font-medium text-[20px] ${navText}`}>
+          <nav className={`hidden lg:flex flex-1 justify-center gap-8 font-medium text-[20px] ${navText}`}>
             <Accordion
               type="single"
               collapsible
@@ -147,12 +139,12 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
           </nav>
 
           {/* Mobile Hamburger */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Hamburger toggled={isOpen} toggle={setOpen} color={hamburgerColor} />
           </div>
 
-          <div className="hidden md:flex flex-shrink-0">
-            <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
+          <div className="hidden lg:flex flex-shrink-0">
+            <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
               <Badge
                 href="#"
                 bgColor={badgeBg}
@@ -170,7 +162,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 w-full bg-white shadow-lg md:hidden z-50">
+        <div className="absolute top-full left-0 right-0 w-full bg-white shadow-lg lg:hidden z-50">
           <Accordion type="single" collapsible className="w-full">
             {/* Partners Accordion */}
             <AccordionItem value="partners">
@@ -212,7 +204,7 @@ export default function Header({ bgType }: { bgType: "orange" | "white" }) {
 
             {/* Mobile "Get the app" */}
             <div className="px-6 py-4">
-              <Link href={getAppLink(device)} target="_blank" rel="noopener noreferrer">
+              <Link href={getAppLink()} target="_blank" rel="noopener noreferrer">
                 <Badge
                   href="#"
                   bgColor="bg-[var(--joloOrange)]"

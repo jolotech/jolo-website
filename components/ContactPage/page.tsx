@@ -39,7 +39,7 @@ const SOCIALS: Social[] = [
     icon: <Image src={LinkedInIcon} alt="LinkedIn icon" className="h-[32px] w-[32px]" />,
   },
   {
-    href: "https://www.facebook.com/share/16w6ZZ52VP/",
+    href: "https://web.facebook.com/p/Jolo-Delivery-61577741350506/?_rdc=1&_rdr#",
     label: "Facebook",
     icon: <Image src={FaceBookIcon} alt="Facebook icon" className="h-[32px] w-[32px]" />,
   },

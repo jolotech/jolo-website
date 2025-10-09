@@ -7,6 +7,12 @@ import { FaGooglePlay, FaApple, FaInstagram, FaLinkedin, FaFacebook, FaXTwitter 
 import JoloLogo from "@/public/images/JoloLogo.svg";
 import Container from "@/components/container/Container";
 import { useDeviceType } from "@/hooks/useDeviceType";
+import { Fredoka } from "next/font/google";
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function Footer() {
   const deviceType = useDeviceType();
@@ -27,8 +33,8 @@ export default function Footer() {
         <div className="py-12 flex flex-row justify-between items-center gap-6 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-6">
           {/* Heading */}
           <h2
-            className="font-[Fredoka] text-[64px] font-medium leading-snug text-left
-               max-md:text-[40px] max-md:font-medium max-md:text-center"
+            className={`${fredoka.className} text-[64px] font-medium leading-snug text-left
+               max-md:text-[40px] max-md:font-medium max-md:text-center`}
           >
             Ready to explore <br /> with Jolo
           </h2>
@@ -43,7 +49,7 @@ export default function Footer() {
                 text=""
                 className="rounded-full px-4 bg-white h-[64px] w-[209px] flex justify-center items-center"
               >
-                <span className="font-[Inter] font-semibold text-[20px] ">Get the app</span>
+                <span className="font-semibold text-[20px] ">Get the app</span>
                 <FaGooglePlay className="w-5 h-5 cursor-pointer" />
                 <FaApple className="w-5 h-5 cursor-pointer ml-2" />
               </Badge>
@@ -58,7 +64,7 @@ export default function Footer() {
             {/* Logo + About */}
             <div className="col-span-2 md:-order-none order-1">
               <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} className="mb-4" />
-              <p className="text-base leading-relaxed font-light text-sm">
+              <p className="text-base leading-relaxed font-light">
                 Jolo is a logistics company that connects its users to their favorite food vendors, making sure they
                 don’t have to wait on the common delays in our regular delivery companies.
               </p>
@@ -89,7 +95,7 @@ export default function Footer() {
                   <FaLinkedin />
                 </Link>
                 <Link
-                  href="https://web.facebook.com/profile.php?id=61577741350506#"
+                  href="https://web.facebook.com/p/Jolo-Delivery-61577741350506/?_rdc=1&_rdr#"
                   aria-label="Facebook"
                   target="_blank"
                   rel="noreferrer"
