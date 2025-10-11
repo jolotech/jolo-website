@@ -32,7 +32,8 @@ export default function HeroSection() {
                   animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
                 }`}
               >
-                Fresh Market Groceries, Delivered Fast
+                <p>Fresh Market Groceries, </p>
+                <span className="block px-14">Delivered Fast</span>
               </h1>
 
               <p
