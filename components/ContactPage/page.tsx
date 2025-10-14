@@ -162,6 +162,7 @@ export default function ContactPage() {
                     </Label>
                     <Input
                       id="firstName"
+                      required
                       placeholder="Enter first name"
                       value={formData.firstName}
                       onChange={handleChange}
@@ -175,6 +176,7 @@ export default function ContactPage() {
                     </Label>
                     <Input
                       id="lastName"
+                      required
                       placeholder="Enter last name"
                       value={formData.lastName}
                       onChange={handleChange}
@@ -190,6 +192,7 @@ export default function ContactPage() {
                   </Label>
                   <Input
                     id="email"
+                    required
                     type="email"
                     placeholder="Enter email address"
                     value={formData.email}
@@ -205,6 +208,7 @@ export default function ContactPage() {
                   </Label>
                   <Textarea
                     id="message"
+                    required
                     placeholder="Enter your message here"
                     value={formData.message}
                     onChange={handleChange}
