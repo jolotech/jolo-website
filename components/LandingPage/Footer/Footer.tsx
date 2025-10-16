@@ -60,7 +60,7 @@ export default function Footer() {
 
       <div className="bg-[var(--joloOrange)] text-[var(--background-color)] rounded-t-2xl mx-4">
         <Container>
-          <div className="py-12 grid grid-cols-1 md:grid-cols-6 gap-10 md:gap-32">
+          <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-32">
             {/* Logo + About */}
             <div className="col-span-2 md:-order-none order-1">
               <Image src={JoloLogo} alt="Jolo Logo" width={40} height={40} className="mb-4" />
@@ -105,7 +105,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-24">
+            <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
               {/* Solutions */}
               <div className="order-1 md:order-2">
                 <h4 className="font-medium mb-4">Solutions</h4>
@@ -125,22 +125,6 @@ export default function Footer() {
               {/* Company */}
               <div className="order-1 md:order-3">
                 <h4 className="font-medium mb-4">Company</h4>
-                <ul className="space-y-2 text-sm">
-                  <li>
-                    <Link href="/about">About Us</Link>
-                  </li>
-                  <li>
-                    <Link href="/career">Careers</Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">Contact</Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Features */}
-              <div className="order-1 md:order-4">
-                <h4 className="font-medium mb-4">Features</h4>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <Link href="/about">About Us</Link>
