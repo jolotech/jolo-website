@@ -23,7 +23,7 @@ export default function HeroSection() {
     <section className="relative bg-[var(--joloOrange)] text-white overflow-hidden">
       {/* Constrained text + buttons */}
       <Container>
-        <div className="mt-16 sm:mt-8 md:mt-16 py-16 text-center">
+        <div className="mt-16 sm:mt-4 md:mt-8 py-16 text-center">
           {/* Text animation */}
           <div className="max-w-6xl mx-auto text-center">
             <article>
@@ -37,7 +37,7 @@ export default function HeroSection() {
               </h1>
 
               <p
-                className={`mt-6 md:mt-10 text-[18px] md:text-[20px] font-normal text-orange-100 transition-all duration-700 delay-200 max-w-5xl ease-out ${
+                className={`mt-6 md:mt-10 text-[18px] md:text-[20px] font-normal text-orange-100 transition-all duration-700 delay-200 ease-out ${
                   animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
                 }`}
               >
