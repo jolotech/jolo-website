@@ -39,7 +39,7 @@ export default function FeatureSection({
             <Card key={feature.id}>
               <CardContent className="p-6 flex flex-col justify-center items-start h-full  ">
                 <div className="text-2xl">{feature.icon}</div>
-                <h3 className="font-medium text-lg mt-7 text-jolo-orange-100">{feature.title}</h3>
+                <h3 className="font-medium text-lg mt-7">{feature.title}</h3>
                 <p className="text-sm text-gray-600 mt-4">{feature.description}</p>
               </CardContent>
             </Card>
