@@ -18,7 +18,7 @@ export default function useContactForm() {
     setSuccess(false);
 
     try {
-      const res = await fetch("http://64.23.181.202:8021/api/v1/contact-us", {
+      const res = await fetch("https://dashboard.jolojolo.com/api/v1/contact-us", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
