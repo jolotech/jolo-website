@@ -1,36 +1,46 @@
-
 .wrapper {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center bg-white border border-jolo-grey-300 rounded-2xl;
 }
 
 .wrapper > div {
-  @apply transition h-[360px] w-auto rounded-none bg-none shadow-none border border-jolo-grey-300 border-t-0 border-l-0;
+  @apply transition h-[360px] w-auto rounded-none bg-none shadow-none;
+}
+
+.wrapper > div:nth-child(1),
+.wrapper > div:nth-child(4) {
+  @apply rounded-tl-2xl;
+}
+
+.wrapper > div:nth-child(3),
+.wrapper > div:nth-child(6) {
+  @apply rounded-tr-2xl;
+}
+
+.wrapper > div:not(:nth-child(6)) {
+  @apply border-b-[1px] sm:border-b-0 border-jolo-grey-300;
 }
 
 .wrapper > div:nth-child(1),
 .wrapper > div:nth-child(2),
 .wrapper > div:nth-child(3) {
-  @apply border-t-[1px];
+  @apply sm:border-b-[1px] border-jolo-grey-300;
 }
 
-.wrapper > div:nth-child(1),
+.wrapper > div:nth-child(2),
 .wrapper > div:nth-child(3),
-.wrapper > div:nth-child(5) {
-  @apply border-l-[1px];
+.wrapper > div:nth-child(5),
+.wrapper > div:nth-child(6) {
+  @apply sm:border-l-[1px] border-jolo-grey-300 border-solid;
 }
 
-.wrapper > div:nth-child(1) {
-  @apply rounded-tl-2xl;
-}
-.wrapper > div:nth-child(2) {
-  @apply sm:rounded-tr-2xl lg:rounded-none;
-}
 .wrapper > div:nth-child(3) {
-  @apply lg:rounded-tr-2xl;
+  @apply md:border-l-0 lg:border-l md:border-r lg:border-r-0 md:rounded-tr-none;
 }
+
 .wrapper > div:nth-child(5) {
-  @apply lg:rounded-bl-2xl;
+  @apply md:border-l-0 lg:border-l;
 }
-.wrapper > div:nth-child(6) {
-  @apply rounded-br-2xl;
+
+.wrapper > div:nth-child(4) {
+  @apply md:border-b lg:border-b-0;
 }
